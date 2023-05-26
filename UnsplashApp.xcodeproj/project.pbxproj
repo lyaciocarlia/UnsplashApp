@@ -242,6 +242,7 @@
 		1937E8362A1F3D45007A07AE /* UnsplashApp */ = {
 			isa = PBXGroup;
 			children = (
+				1937E94A2A20D1AB007A07AE /* Extensions */,
 				1937E8372A1F3D45007A07AE /* AppDelegate.swift */,
 				1937E84B2A1F3DD7007A07AE /* MainCoordinator.swift */,
 				1937E84D2A1F3DE6007A07AE /* Authenticatio */,
@@ -808,6 +809,13 @@
 				1937E8422A1F3D47007A07AE /* LaunchScreen.storyboard */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		1937E94A2A20D1AB007A07AE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
