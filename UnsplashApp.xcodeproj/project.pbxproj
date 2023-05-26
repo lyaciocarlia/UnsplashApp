@@ -107,7 +107,7 @@
 		998B08102A22526400A3C6EC /* CreateAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 998B080F2A22526400A3C6EC /* CreateAccountViewController.xib */; };
 		99DDEAF62A2343D70059B4C0 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DDEAF42A2343D60059B4C0 /* CreateAccountViewController.swift */; };
 		99DDEAF72A2343D70059B4C0 /* CreateAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99DDEAF52A2343D60059B4C0 /* CreateAccountViewController.xib */; };
-/* End PBXBuildFile section */
+		1937E94C2A20DA34007A07AE /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E94B2A20DA34007A07AE /* Gradient.swift */; };/* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1937E8342A1F3D45007A07AE /* UnsplashApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnsplashApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -212,6 +212,7 @@
 		998B080F2A22526400A3C6EC /* CreateAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CreateAccountViewController.xib; path = ../../../../../../CreateAccountViewController.xib; sourceTree = "<group>"; };
 		99DDEAF42A2343D60059B4C0 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		99DDEAF52A2343D60059B4C0 /* CreateAccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateAccountViewController.xib; sourceTree = "<group>"; };
+		1937E94B2A20DA34007A07AE /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -812,6 +813,14 @@
 			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
+		1937E94A2A20D1AB007A07AE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1937E94B2A20DA34007A07AE /* Gradient.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -899,6 +908,7 @@
 				1937E8E72A1F8B93007A07AE /* RootTabbarModel.swift in Sources */,
 				1937E8A72A1F8976007A07AE /* AuthenticationModel.swift in Sources */,
 				1937E8A52A1F8970007A07AE /* AuthenticationModelProtocol.swift in Sources */,
+				1937E94C2A20DA34007A07AE /* Gradient.swift in Sources */,
 				1937E9172A1F8CD1007A07AE /* LikesModelProtocol.swift in Sources */,
 				1937E9032A1F8C46007A07AE /* PictureDetailsViewModelProtocol.swift in Sources */,
 				1937E8E32A1F8B7C007A07AE /* RootTabbarViewModel.swift in Sources */,
