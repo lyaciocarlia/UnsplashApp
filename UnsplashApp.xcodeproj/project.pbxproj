@@ -104,6 +104,7 @@
 		1937E9452A1F8EDB007A07AE /* AuthentificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E9442A1F8EDB007A07AE /* AuthentificationService.swift */; };
 		1937E9472A1F8EE4007A07AE /* AuthentificationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E9462A1F8EE4007A07AE /* AuthentificationServiceProtocol.swift */; };
 		1937E9492A1FAABF007A07AE /* AuthenticationObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E9482A1FAABF007A07AE /* AuthenticationObservable.swift */; };
+		1937E94C2A20DA34007A07AE /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E94B2A20DA34007A07AE /* Gradient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -206,6 +207,7 @@
 		1937E9442A1F8EDB007A07AE /* AuthentificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationService.swift; sourceTree = "<group>"; };
 		1937E9462A1F8EE4007A07AE /* AuthentificationServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationServiceProtocol.swift; sourceTree = "<group>"; };
 		1937E9482A1FAABF007A07AE /* AuthenticationObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationObservable.swift; sourceTree = "<group>"; };
+		1937E94B2A20DA34007A07AE /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -808,6 +810,7 @@
 		1937E94A2A20D1AB007A07AE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				1937E94B2A20DA34007A07AE /* Gradient.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -899,6 +902,7 @@
 				1937E8E72A1F8B93007A07AE /* RootTabbarModel.swift in Sources */,
 				1937E8A72A1F8976007A07AE /* AuthenticationModel.swift in Sources */,
 				1937E8A52A1F8970007A07AE /* AuthenticationModelProtocol.swift in Sources */,
+				1937E94C2A20DA34007A07AE /* Gradient.swift in Sources */,
 				1937E9172A1F8CD1007A07AE /* LikesModelProtocol.swift in Sources */,
 				1937E9032A1F8C46007A07AE /* PictureDetailsViewModelProtocol.swift in Sources */,
 				1937E8E32A1F8B7C007A07AE /* RootTabbarViewModel.swift in Sources */,
