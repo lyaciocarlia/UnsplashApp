@@ -814,6 +814,7 @@
 		1937E94A2A20D1AB007A07AE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				1937E94B2A20DA34007A07AE /* Gradient.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -906,6 +907,7 @@
 				1980971D2A24DCAD007A30C2 /* CustomTextField.swift in Sources */,
 				1937E8A72A1F8976007A07AE /* AuthenticationModel.swift in Sources */,
 				1937E8A52A1F8970007A07AE /* AuthenticationModelProtocol.swift in Sources */,
+				1937E94C2A20DA34007A07AE /* Gradient.swift in Sources */,
 				1937E9172A1F8CD1007A07AE /* LikesModelProtocol.swift in Sources */,
 				1937E9032A1F8C46007A07AE /* PictureDetailsViewModelProtocol.swift in Sources */,
 				1937E8E32A1F8B7C007A07AE /* RootTabbarViewModel.swift in Sources */,
