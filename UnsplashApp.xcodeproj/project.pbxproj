@@ -814,7 +814,6 @@
 		1980971A2A24A1F6007A30C2 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				1937E94B2A20DA34007A07AE /* Gradient.swift */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
