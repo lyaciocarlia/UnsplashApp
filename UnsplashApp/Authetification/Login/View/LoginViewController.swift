@@ -78,6 +78,7 @@ extension LoginViewController {
             UIGraphicsEndImageContext()
             return nil
         }
+        
         // Apply the gradient to the image
         let startPoint = CGPoint(x: imageSize.width / 2, y: 0.0)
         let endPoint = CGPoint(x: imageSize.width / 2, y: imageSize.height)
