@@ -32,7 +32,6 @@
 		1937E8B52A1F89E3007A07AE /* LoginModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E8B42A1F89E3007A07AE /* LoginModelProtocol.swift */; };
 		1937E8B72A1F89E9007A07AE /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E8B62A1F89E9007A07AE /* LoginModel.swift */; };
 		1937E8B92A1F8A01007A07AE /* CreateAccountBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E8B82A1F8A01007A07AE /* CreateAccountBuilder.swift */; };
-		1937E8BC2A1F8A14007A07AE /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E8BA2A1F8A14007A07AE /* CreateAccountViewController.swift */; };
 		1937E8BF2A1F8A21007A07AE /* CreateAccountViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E8BE2A1F8A21007A07AE /* CreateAccountViewProtocol.swift */; };
 		1937E8C12A1F8A34007A07AE /* CreateAccountViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E8C02A1F8A34007A07AE /* CreateAccountViewModelProtocol.swift */; };
 		1937E8C32A1F8A3A007A07AE /* CreateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E8C22A1F8A3A007A07AE /* CreateAccountViewModel.swift */; };
@@ -106,6 +105,8 @@
 		194DB2FC2A223AAC00A7915A /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194DB2FB2A223AAC00A7915A /* CustomTextField.swift */; };
 		194DB2FE2A235DA500A7915A /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194DB2FD2A235DA500A7915A /* KeychainManager.swift */; };
 		998B08102A22526400A3C6EC /* CreateAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 998B080F2A22526400A3C6EC /* CreateAccountViewController.xib */; };
+		99DDEAF62A2343D70059B4C0 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DDEAF42A2343D60059B4C0 /* CreateAccountViewController.swift */; };
+		99DDEAF72A2343D70059B4C0 /* CreateAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99DDEAF52A2343D60059B4C0 /* CreateAccountViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -136,7 +137,6 @@
 		1937E8B42A1F89E3007A07AE /* LoginModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModelProtocol.swift; sourceTree = "<group>"; };
 		1937E8B62A1F89E9007A07AE /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		1937E8B82A1F8A01007A07AE /* CreateAccountBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountBuilder.swift; sourceTree = "<group>"; };
-		1937E8BA2A1F8A14007A07AE /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		1937E8BE2A1F8A21007A07AE /* CreateAccountViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewProtocol.swift; sourceTree = "<group>"; };
 		1937E8C02A1F8A34007A07AE /* CreateAccountViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModelProtocol.swift; sourceTree = "<group>"; };
 		1937E8C22A1F8A3A007A07AE /* CreateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModel.swift; sourceTree = "<group>"; };
@@ -210,6 +210,8 @@
 		194DB2FB2A223AAC00A7915A /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		194DB2FD2A235DA500A7915A /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		998B080F2A22526400A3C6EC /* CreateAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CreateAccountViewController.xib; path = ../../../../../../CreateAccountViewController.xib; sourceTree = "<group>"; };
+		99DDEAF42A2343D60059B4C0 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		99DDEAF52A2343D60059B4C0 /* CreateAccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateAccountViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -394,9 +396,9 @@
 		1937E8692A1F4040007A07AE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				998B080F2A22526400A3C6EC /* CreateAccountViewController.xib */,
-				1937E8BA2A1F8A14007A07AE /* CreateAccountViewController.swift */,
 				1937E8BE2A1F8A21007A07AE /* CreateAccountViewProtocol.swift */,
+				99DDEAF42A2343D60059B4C0 /* CreateAccountViewController.swift */,
+				99DDEAF52A2343D60059B4C0 /* CreateAccountViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -876,7 +878,7 @@
 				1937E89D2A1F890E007A07AE /* AuthenticationViewController.xib in Resources */,
 				1937E8442A1F3D47007A07AE /* LaunchScreen.storyboard in Resources */,
 				1937E8412A1F3D47007A07AE /* Assets.xcassets in Resources */,
-				998B08102A22526400A3C6EC /* CreateAccountViewController.xib in Resources */,
+				99DDEAF72A2343D70059B4C0 /* CreateAccountViewController.xib in Resources */,
 				1937E8FF2A1F8C22007A07AE /* PictureDetailsViewController.xib in Resources */,
 				1937E92F2A1F8E59007A07AE /* ChangePasswordViewController.xib in Resources */,
 				1937E90F2A1F8CA5007A07AE /* LikesViewController.xib in Resources */,
@@ -951,7 +953,6 @@
 				1937E89C2A1F890E007A07AE /* AuthenticationViewController.swift in Sources */,
 				1937E9392A1F8EA6007A07AE /* AppService.swift in Sources */,
 				1937E8D72A1F8AC8007A07AE /* ForgotPasswordModel.swift in Sources */,
-				1937E8BC2A1F8A14007A07AE /* CreateAccountViewController.swift in Sources */,
 				1937E8B52A1F89E3007A07AE /* LoginModelProtocol.swift in Sources */,
 				1937E9132A1F8CB9007A07AE /* LikesViewModelProtocol.swift in Sources */,
 				1937E91B2A1F8D09007A07AE /* SettingsViewProtocol.swift in Sources */,
@@ -968,6 +969,7 @@
 				1937E89F2A1F891F007A07AE /* AuthenticationViewProtocol.swift in Sources */,
 				1937E8F92A1F8C0B007A07AE /* PictureDetailsBuilder.swift in Sources */,
 				1937E93B2A1F8EAD007A07AE /* AppServiceProtocol.swift in Sources */,
+				99DDEAF62A2343D70059B4C0 /* CreateAccountViewController.swift in Sources */,
 				1937E8FE2A1F8C22007A07AE /* PictureDetailsViewController.swift in Sources */,
 				1937E9292A1F8E48007A07AE /* ChangePasswordBuilder.swift in Sources */,
 				1937E9052A1F8C57007A07AE /* PictureDetailsModel.swift in Sources */,
@@ -1123,6 +1125,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1151,6 +1154,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

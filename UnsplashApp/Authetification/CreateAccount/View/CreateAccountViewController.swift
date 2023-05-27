@@ -14,7 +14,7 @@ class CreateAccountViewController: UIViewController, CreateAccountViewProtocol {
     
     @IBOutlet weak var emailTextFeild: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var repeatPasswordTextField: UITextField!
+    @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet weak var errorMessageLabel: UILabel!
     @IBOutlet weak var createAccountButton: UIButton!
     @IBOutlet weak var topLabelConstraint: NSLayoutConstraint!
@@ -38,9 +38,9 @@ class CreateAccountViewController: UIViewController, CreateAccountViewProtocol {
     }
     
     private func registerKeyboardNotifcations() {
-        
+
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
-        
+
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification: )),
                                                name: UIResponder.keyboardWillShowNotification,
                                                object: nil)
@@ -48,18 +48,18 @@ class CreateAccountViewController: UIViewController, CreateAccountViewProtocol {
                                                name: UIResponder.keyboardWillHideNotification,
                                                object: nil)
     }
-    
+
     @objc private func hideKeyboard() {
         self.view.endEditing(true)
     }
-    
+
     @objc private func keyboardWillShow(notification: NSNotification) {
         topLabelConstraint.constant -= 30
         UIView.animate(withDuration: 0.3) {
                self.view.layoutIfNeeded()
            }
     }
-    
+
     @objc private func keyaboardWillHide() {
         topLabelConstraint.constant += 30
         UIView.animate(withDuration: 0.3) {
