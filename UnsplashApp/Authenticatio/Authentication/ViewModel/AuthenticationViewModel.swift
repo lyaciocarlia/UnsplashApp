@@ -32,5 +32,4 @@ class AuthenticationViewModel: AuthenticationViewModelProtocol {
             self.createAccError.value = status!.localizedDescription
         }
     }
-
 }
