@@ -9,15 +9,15 @@ import UIKit
 
 class RootTabbarViewController: UITabBarController, RootTabbarProtocol {
 
-    var viewModel: RootTabbarViewModelProtocol?
-    var coordinator: BrowseCoordinatorProtocol?
+    var viewModel: RootTabbarViewModelProtocol
+    var coordinator: BrowseCoordinatorProtocol
     
     var browse: UINavigationController
     var likes: LikesViewProtocol
     var settings: UINavigationController
     
-    init(viewModel: RootTabbarViewModelProtocol? = nil,
-         coordinator: BrowseCoordinatorProtocol? = nil,
+    init(viewModel: RootTabbarViewModelProtocol,
+         coordinator: BrowseCoordinatorProtocol,
          browse: UINavigationController,
          likes: LikesViewProtocol,
          settings: UINavigationController) {

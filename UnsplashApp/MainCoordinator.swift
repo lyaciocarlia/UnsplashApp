@@ -9,15 +9,15 @@ import Foundation
 import UIKit
 
 class MainCoordinator: NSObject, UINavigationControllerDelegate {
-
+    
     var navigationController = UINavigationController()
-
+    
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
-
+    
     func rootVC() -> UIViewController {
-        let authCoordinator = AuthetificationCoordinator(navigationController: navigationController)
+        let authCoordinator = AuthenticationCoordinator(navigationController: navigationController)
         return authCoordinator.rootVC()
     }
     

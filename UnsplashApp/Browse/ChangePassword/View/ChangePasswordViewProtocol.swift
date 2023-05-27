@@ -9,6 +9,6 @@ import Foundation
 import UIKit
 
 protocol ChangePasswordViewProtocol: UIViewController {
-    var viewModel: ChangePasswordViewModelProtocol? { get set }
-    var coordinator: BrowseCoordinatorProtocol? { get set }
+    var viewModel: ChangePasswordViewModelProtocol { get set }
+    var coordinator: BrowseCoordinatorProtocol { get set }
 }

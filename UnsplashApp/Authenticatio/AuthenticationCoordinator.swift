@@ -1,5 +1,5 @@
 //
-//  AuthetificationCoordinator.swift
+//  AuthenticationCoordinator.swift
 //  UnsplashApp
 //
 //  Created by Iuliana Stecalovici  on 25.05.2023.
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class AuthetificationCoordinator: AuthetificationCoordinatorProtocol {
+class AuthenticationCoordinator: AuthenticationCoordinatorProtocol {
     
     private var navigationController: UINavigationController
     private let authenticationVCBuilder = AuthenticationBuilder()

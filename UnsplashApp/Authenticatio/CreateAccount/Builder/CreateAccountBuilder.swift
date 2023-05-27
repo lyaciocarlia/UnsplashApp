@@ -8,12 +8,9 @@
 import Foundation
 
 class CreateAccountBuilder {
-    
-    func build(coordinator: AuthetificationCoordinator) -> CreateAccountViewProtocol {
-        let view = CreateAccountViewController()
-        view.coordinator = coordinator
+    func build(coordinator: AuthenticationCoordinator) -> CreateAccountViewProtocol {
         let viewModel = CreateAccountViewModel()
-        view.viewModel = viewModel
+        let view = CreateAccountViewController(viewModel: viewModel, coordinator: coordinator)
         return view
     }
 }

@@ -11,7 +11,7 @@
 		1937E8412A1F3D47007A07AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1937E8402A1F3D47007A07AE /* Assets.xcassets */; };
 		1937E8442A1F3D47007A07AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1937E8422A1F3D47007A07AE /* LaunchScreen.storyboard */; };
 		1937E84C2A1F3DD7007A07AE /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E84B2A1F3DD7007A07AE /* MainCoordinator.swift */; };
-		1937E84F2A1F3E0F007A07AE /* AuthetificationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E84E2A1F3E0F007A07AE /* AuthetificationCoordinator.swift */; };
+		1937E84F2A1F3E0F007A07AE /* AuthenticationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E84E2A1F3E0F007A07AE /* AuthenticationCoordinator.swift */; };
 		1937E8512A1F3E1F007A07AE /* AuthetificationCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E8502A1F3E1F007A07AE /* AuthetificationCoordinatorProtocol.swift */; };
 		1937E8542A1F3E48007A07AE /* AuthenticationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E8532A1F3E48007A07AE /* AuthenticationBuilder.swift */; };
 		1937E8722A1F4144007A07AE /* BrowseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E8712A1F4144007A07AE /* BrowseCoordinator.swift */; };
@@ -113,7 +113,7 @@
 		1937E8432A1F3D47007A07AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1937E8452A1F3D47007A07AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1937E84B2A1F3DD7007A07AE /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
-		1937E84E2A1F3E0F007A07AE /* AuthetificationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthetificationCoordinator.swift; sourceTree = "<group>"; };
+		1937E84E2A1F3E0F007A07AE /* AuthenticationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationCoordinator.swift; sourceTree = "<group>"; };
 		1937E8502A1F3E1F007A07AE /* AuthetificationCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthetificationCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		1937E8532A1F3E48007A07AE /* AuthenticationBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationBuilder.swift; sourceTree = "<group>"; };
 		1937E8712A1F4144007A07AE /* BrowseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseCoordinator.swift; sourceTree = "<group>"; };
@@ -240,7 +240,7 @@
 			children = (
 				1937E8372A1F3D45007A07AE /* AppDelegate.swift */,
 				1937E84B2A1F3DD7007A07AE /* MainCoordinator.swift */,
-				1937E84D2A1F3DE6007A07AE /* Authetification */,
+				1937E84D2A1F3DE6007A07AE /* Authenticatio */,
 				1937E8702A1F4116007A07AE /* Browse */,
 				1937E8942A1F42DD007A07AE /* Services */,
 				1937E8992A1F4326007A07AE /* SupportingFiles */,
@@ -249,20 +249,20 @@
 			path = UnsplashApp;
 			sourceTree = "<group>";
 		};
-		1937E84D2A1F3DE6007A07AE /* Authetification */ = {
+		1937E84D2A1F3DE6007A07AE /* Authenticatio */ = {
 			isa = PBXGroup;
 			children = (
-				1937E84E2A1F3E0F007A07AE /* AuthetificationCoordinator.swift */,
+				1937E84E2A1F3E0F007A07AE /* AuthenticationCoordinator.swift */,
 				1937E8502A1F3E1F007A07AE /* AuthetificationCoordinatorProtocol.swift */,
-				1937E8522A1F3E33007A07AE /* Authetification */,
+				1937E8522A1F3E33007A07AE /* Authentication */,
 				1937E8592A1F3ECF007A07AE /* Login */,
 				1937E85E2A1F3F5F007A07AE /* CreateAccount */,
 				1937E86B2A1F4057007A07AE /* ForgotPassword */,
 			);
-			path = Authetification;
+			path = Authenticatio;
 			sourceTree = "<group>";
 		};
-		1937E8522A1F3E33007A07AE /* Authetification */ = {
+		1937E8522A1F3E33007A07AE /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
 				1937E8552A1F3E4D007A07AE /* Builder */,
@@ -270,7 +270,7 @@
 				1937E8572A1F3E60007A07AE /* ViewModel */,
 				1937E8582A1F3E6B007A07AE /* Model */,
 			);
-			path = Authetification;
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		1937E8552A1F3E4D007A07AE /* Builder */ = {
@@ -954,7 +954,7 @@
 				1937E92E2A1F8E59007A07AE /* ChangePasswordViewController.swift in Sources */,
 				1937E92B2A1F8E52007A07AE /* ChangePasswordViewProtocol.swift in Sources */,
 				1937E9272A1F8E0A007A07AE /* SettingsModelProtocol.swift in Sources */,
-				1937E84F2A1F3E0F007A07AE /* AuthetificationCoordinator.swift in Sources */,
+				1937E84F2A1F3E0F007A07AE /* AuthenticationCoordinator.swift in Sources */,
 				1937E8A92A1F898D007A07AE /* LoginBuilder.swift in Sources */,
 				1937E8382A1F3D45007A07AE /* AppDelegate.swift in Sources */,
 				1937E89F2A1F891F007A07AE /* AuthenticationViewProtocol.swift in Sources */,

@@ -9,6 +9,6 @@ import Foundation
 import UIKit
 
 protocol LoginViewProtocol: UIViewController{
-        var viewModel: LoginViewModelProtocol? { get set }
-        var coordinator: AuthetificationCoordinatorProtocol? { get set }
+        var viewModel: LoginViewModelProtocol { get set }
+        var coordinator: AuthenticationCoordinatorProtocol { get set }
 }

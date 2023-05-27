@@ -9,11 +9,9 @@ import Foundation
 
 class LoginBuilder {
     
-    func build(coordinator: AuthetificationCoordinator) -> LoginViewProtocol {
-        let view = LoginViewController()
-        view.coordinator = coordinator
+    func build(coordinator: AuthenticationCoordinator) -> LoginViewProtocol {
         let viewModel = LoginViewModel()
-        view.viewModel = viewModel
+        let view = LoginViewController(viewModel: viewModel, coordinator: coordinator)
         return view
     }
 }

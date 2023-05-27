@@ -9,10 +9,8 @@ import Foundation
 
 class LikesBuilder {
     func build(coordinator: BrowseCoordinator) -> LikesViewProtocol {
-            let view = LikesViewController()
-            let viewModel = LikesViewModel()
-            view.coordinator = coordinator
-            view.viewModel = viewModel
-            return view
+        let viewModel = LikesViewModel()
+        let view = LikesViewController(viewModel: viewModel, coordinator: coordinator)
+        return view
     }
 }

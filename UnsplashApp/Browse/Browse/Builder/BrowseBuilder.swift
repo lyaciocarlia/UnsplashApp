@@ -9,10 +9,9 @@ import Foundation
 
 class BrowseBuilder {
     func build(coordinator: BrowseCoordinator) -> BrowseViewProtocol {
-        let view = BrowseViewController()
         let viewModel = BrowseViewModel()
-        view.coordinator = coordinator
-        view.viewModel = viewModel
+        let view = BrowseViewController(viewModel: viewModel, coordinator: coordinator)
+        
         return view
     }
 }

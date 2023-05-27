@@ -9,11 +9,9 @@ import Foundation
 
 class AuthenticationBuilder {
     
-    func build(coordinator: AuthetificationCoordinator) -> AuthenticationViewProtocol {
-        let view = AuthenticationViewController()
-        view.coordinator = coordinator
+    func build(coordinator: AuthenticationCoordinator) -> AuthenticationViewProtocol {
         let viewModel = AuthenticationViewModel()
-        view.viewModel = viewModel
+        let view = AuthenticationViewController(viewModel: viewModel, coordinator: coordinator)
         return view
     }
 }

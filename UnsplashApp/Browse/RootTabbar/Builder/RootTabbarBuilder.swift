@@ -15,10 +15,12 @@ class RootTabbarBuilder {
                likes: LikesViewProtocol,
                settings: UINavigationController) -> RootTabbarProtocol {
         
-        let view = RootTabbarViewController(browse: browse, likes: likes, settings: settings)
         let viewModel = RootTabbarViewModel()
-        view.coordinator = coordinator
-        view.viewModel = viewModel
+        let view = RootTabbarViewController(viewModel: viewModel,
+                                            coordinator: coordinator ,
+                                            browse: browse,
+                                            likes: likes,
+                                            settings: settings)
         return view
     }
 }

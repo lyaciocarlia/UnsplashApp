@@ -1,5 +1,5 @@
 //
-//  AuthetificationCoordinatorProtocol.swift
+//  AuthentificationCoordinatorProtocol.swift
 //  UnsplashApp
 //
 //  Created by Iuliana Stecalovici  on 25.05.2023.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol AuthetificationCoordinatorProtocol {
+protocol AuthenticationCoordinatorProtocol {
     func finishAuthentication()
     func openLoginScreen()
     func openCreateAccScreen()
