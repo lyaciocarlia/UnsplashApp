@@ -918,6 +918,7 @@
 				1937E8E12A1F8B5F007A07AE /* RootTabbarViewModelProtocol.swift in Sources */,
 				1937E8CF2A1F8A92007A07AE /* ForgotPasswordViewProtocol.swift in Sources */,
 				1937E9432A1F8ECE007A07AE /* UnsplashStorageServiceProtocol.swift in Sources */,
+				194DB2FC2A223AAC00A7915A /* CustomTextField.swift in Sources */,
 				1937E9012A1F8C2D007A07AE /* PictureDetailsViewModel.swift in Sources */,
 				1937E8F12A1F8BDE007A07AE /* BrowseViewModel.swift in Sources */,
 				1937E8D12A1F8AA6007A07AE /* ForgotPasswordViewModelProtocol.swift in Sources */,
