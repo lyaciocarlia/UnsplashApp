@@ -24,6 +24,7 @@
             <subviews>
                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="804-9y-XJR" customClass="CustomTextField" customModule="UnsplashApp" customModuleProvider="target">
                     <rect key="frame" x="49" y="297.33333333333331" width="295" height="18.666666666666686"/>
+<<<<<<< HEAD
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                 </textField>
@@ -36,16 +37,18 @@
                     <rect key="frame" x="49" y="396.66666666666669" width="295" height="48"/>
                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="804-9y-XJR">
                     <rect key="frame" x="49" y="297.33333333333331" width="295" height="34"/>
+=======
+>>>>>>> 6c98b0f (Add login screen)
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                 </textField>
-                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AbD-rs-oNn">
-                    <rect key="frame" x="49" y="361.33333333333331" width="295" height="34"/>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AbD-rs-oNn" customClass="CustomTextField" customModule="UnsplashApp" customModuleProvider="target">
+                    <rect key="frame" x="49" y="346" width="295" height="18.666666666666686"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dd8-Xf-rY1">
-                    <rect key="frame" x="49" y="427.33333333333331" width="295" height="48"/>
+                    <rect key="frame" x="49" y="396.66666666666669" width="295" height="48"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="48" id="QjX-ap-9hN"/>
                     </constraints>
