@@ -33,7 +33,6 @@
 		1937E8B72A1F89E9007A07AE /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E8B62A1F89E9007A07AE /* LoginModel.swift */; };
 		1937E8B92A1F8A01007A07AE /* CreateAccountBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E8B82A1F8A01007A07AE /* CreateAccountBuilder.swift */; };
 		1937E8BC2A1F8A14007A07AE /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E8BA2A1F8A14007A07AE /* CreateAccountViewController.swift */; };
-		1937E8BD2A1F8A14007A07AE /* CreateAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1937E8BB2A1F8A14007A07AE /* CreateAccountViewController.xib */; };
 		1937E8BF2A1F8A21007A07AE /* CreateAccountViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E8BE2A1F8A21007A07AE /* CreateAccountViewProtocol.swift */; };
 		1937E8C12A1F8A34007A07AE /* CreateAccountViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E8C02A1F8A34007A07AE /* CreateAccountViewModelProtocol.swift */; };
 		1937E8C32A1F8A3A007A07AE /* CreateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E8C22A1F8A3A007A07AE /* CreateAccountViewModel.swift */; };
@@ -106,6 +105,7 @@
 		1937E9492A1FAABF007A07AE /* AuthenticationObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E9482A1FAABF007A07AE /* AuthenticationObservable.swift */; };
 		194DB2FC2A223AAC00A7915A /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194DB2FB2A223AAC00A7915A /* CustomTextField.swift */; };
 		194DB2FE2A235DA500A7915A /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194DB2FD2A235DA500A7915A /* KeychainManager.swift */; };
+		998B08102A22526400A3C6EC /* CreateAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 998B080F2A22526400A3C6EC /* CreateAccountViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -137,7 +137,6 @@
 		1937E8B62A1F89E9007A07AE /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		1937E8B82A1F8A01007A07AE /* CreateAccountBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountBuilder.swift; sourceTree = "<group>"; };
 		1937E8BA2A1F8A14007A07AE /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
-		1937E8BB2A1F8A14007A07AE /* CreateAccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateAccountViewController.xib; sourceTree = "<group>"; };
 		1937E8BE2A1F8A21007A07AE /* CreateAccountViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewProtocol.swift; sourceTree = "<group>"; };
 		1937E8C02A1F8A34007A07AE /* CreateAccountViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModelProtocol.swift; sourceTree = "<group>"; };
 		1937E8C22A1F8A3A007A07AE /* CreateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModel.swift; sourceTree = "<group>"; };
@@ -210,6 +209,7 @@
 		1937E9482A1FAABF007A07AE /* AuthenticationObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationObservable.swift; sourceTree = "<group>"; };
 		194DB2FB2A223AAC00A7915A /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		194DB2FD2A235DA500A7915A /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		998B080F2A22526400A3C6EC /* CreateAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CreateAccountViewController.xib; path = ../../../../../../CreateAccountViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -394,9 +394,9 @@
 		1937E8692A1F4040007A07AE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				998B080F2A22526400A3C6EC /* CreateAccountViewController.xib */,
 				1937E8BA2A1F8A14007A07AE /* CreateAccountViewController.swift */,
 				1937E8BE2A1F8A21007A07AE /* CreateAccountViewProtocol.swift */,
-				1937E8BB2A1F8A14007A07AE /* CreateAccountViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -874,9 +874,9 @@
 				1937E8ED2A1F8BC3007A07AE /* BrowseViewController.xib in Resources */,
 				1937E8AD2A1F899D007A07AE /* LoginViewController.xib in Resources */,
 				1937E89D2A1F890E007A07AE /* AuthenticationViewController.xib in Resources */,
-				1937E8BD2A1F8A14007A07AE /* CreateAccountViewController.xib in Resources */,
 				1937E8442A1F3D47007A07AE /* LaunchScreen.storyboard in Resources */,
 				1937E8412A1F3D47007A07AE /* Assets.xcassets in Resources */,
+				998B08102A22526400A3C6EC /* CreateAccountViewController.xib in Resources */,
 				1937E8FF2A1F8C22007A07AE /* PictureDetailsViewController.xib in Resources */,
 				1937E92F2A1F8E59007A07AE /* ChangePasswordViewController.xib in Resources */,
 				1937E90F2A1F8CA5007A07AE /* LikesViewController.xib in Resources */,
