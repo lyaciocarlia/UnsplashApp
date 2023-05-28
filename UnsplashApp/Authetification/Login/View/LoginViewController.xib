@@ -10,7 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="UnsplashApp" customModuleProvider="target">
             <connections>
+                <outlet property="emailTextField" destination="804-9y-XJR" id="uI3-Dh-MT0"/>
                 <outlet property="fadedImage" destination="cJ8-U2-SuX" id="SYE-Ag-hB2"/>
+                <outlet property="passwordTextField" destination="AbD-rs-oNn" id="Ibr-tH-96L"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -50,7 +52,7 @@
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="forgot"/>
                     <connections>
-                        <action selector="forgotPass:" destination="-1" eventType="touchUpInside" id="Aj1-jq-EZd"/>
+                        <action selector="openForgotPassScreen:" destination="-1" eventType="touchUpInside" id="Aj1-jq-EZd"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fad-hA-bOL">
@@ -59,7 +61,7 @@
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="create"/>
                     <connections>
-                        <action selector="createAcc:" destination="-1" eventType="touchUpInside" id="iHL-dq-rlk"/>
+                        <action selector="openCreateAccScreen:" destination="-1" eventType="touchUpInside" id="iHL-dq-rlk"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EL6-qd-Dvr">
