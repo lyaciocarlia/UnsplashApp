@@ -13,7 +13,6 @@
                 <outlet property="emailTextField" destination="804-9y-XJR" id="uI3-Dh-MT0"/>
                 <outlet property="fadedImage" destination="cJ8-U2-SuX" id="SYE-Ag-hB2"/>
                 <outlet property="passwordTextField" destination="AbD-rs-oNn" id="Ibr-tH-96L"/>
-                <outlet property="fadedImage" destination="cJ8-U2-SuX" id="SYE-Ag-hB2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
