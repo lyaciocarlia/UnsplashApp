@@ -6,3 +6,16 @@
 //
 
 import Foundation
+
+class AppService: AppServiceProtocol {
+    let authenticationService: AuthenticationServiceProtocol = AuthentitacionService()
+    
+    func login(email: String, password: String) -> Bool {
+        return authenticationService.login(email: email, password: password )
+    }
+    
+    func createAcc(user: User) -> Error? {
+        let status = authenticationService.createAcc(user: user)
+        return status
+    }
+}

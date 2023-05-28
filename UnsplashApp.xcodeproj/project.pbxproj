@@ -105,6 +105,7 @@
 		1937E9472A1F8EE4007A07AE /* AuthentificationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E9462A1F8EE4007A07AE /* AuthentificationServiceProtocol.swift */; };
 		1937E9492A1FAABF007A07AE /* AuthenticationObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E9482A1FAABF007A07AE /* AuthenticationObservable.swift */; };
 		194DB2FC2A223AAC00A7915A /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194DB2FB2A223AAC00A7915A /* CustomTextField.swift */; };
+		194DB2FE2A235DA500A7915A /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194DB2FD2A235DA500A7915A /* KeychainManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -208,6 +209,7 @@
 		1937E9462A1F8EE4007A07AE /* AuthentificationServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationServiceProtocol.swift; sourceTree = "<group>"; };
 		1937E9482A1FAABF007A07AE /* AuthenticationObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationObservable.swift; sourceTree = "<group>"; };
 		194DB2FB2A223AAC00A7915A /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		194DB2FD2A235DA500A7915A /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,7 +242,6 @@
 		1937E8362A1F3D45007A07AE /* UnsplashApp */ = {
 			isa = PBXGroup;
 			children = (
-				1937E94A2A20D1AB007A07AE /* Extensions */,
 				1937E8372A1F3D45007A07AE /* AppDelegate.swift */,
 				1937E84B2A1F3DD7007A07AE /* MainCoordinator.swift */,
 				1937E84D2A1F3DE6007A07AE /* Authenticatio */,
@@ -768,6 +769,7 @@
 			children = (
 				1937E9442A1F8EDB007A07AE /* AuthentificationService.swift */,
 				1937E9462A1F8EE4007A07AE /* AuthentificationServiceProtocol.swift */,
+				194DB2FD2A235DA500A7915A /* KeychainManager.swift */,
 			);
 			path = AuthentificationService;
 			sourceTree = "<group>";
@@ -806,13 +808,6 @@
 				1937E8422A1F3D47007A07AE /* LaunchScreen.storyboard */,
 			);
 			path = SupportingFiles;
-			sourceTree = "<group>";
-		};
-		1937E94A2A20D1AB007A07AE /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -908,6 +903,7 @@
 				1937E93D2A1F8EB8007A07AE /* UnsplashAPIService.swift in Sources */,
 				1937E8AC2A1F899D007A07AE /* LoginViewController.swift in Sources */,
 				1937E8512A1F3E1F007A07AE /* AuthetificationCoordinatorProtocol.swift in Sources */,
+				194DB2FE2A235DA500A7915A /* KeychainManager.swift in Sources */,
 				1937E8E12A1F8B5F007A07AE /* RootTabbarViewModelProtocol.swift in Sources */,
 				1937E8CF2A1F8A92007A07AE /* ForgotPasswordViewProtocol.swift in Sources */,
 				1937E9432A1F8ECE007A07AE /* UnsplashStorageServiceProtocol.swift in Sources */,

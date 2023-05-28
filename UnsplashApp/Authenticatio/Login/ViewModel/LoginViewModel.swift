@@ -11,6 +11,7 @@ class LoginViewModel: LoginViewModelProtocol {
     var isAuthenticated: Observable<Bool> = Observable(false)
 
     func authenticate(username: String, password: String) {
+        
         self.isAuthenticated.value = true
     }
 }

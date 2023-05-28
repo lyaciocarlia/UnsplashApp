@@ -8,7 +8,6 @@
 import Foundation
 
 class LoginBuilder {
-    
     func build(coordinator: AuthenticationCoordinator) -> LoginViewProtocol {
         let viewModel = LoginViewModel()
         let view = LoginViewController(viewModel: viewModel, coordinator: coordinator)

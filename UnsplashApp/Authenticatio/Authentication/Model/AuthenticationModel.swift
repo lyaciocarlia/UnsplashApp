@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+protocol UserProtocol {
+    var email: String { get set }
+    var password: String { get set }
+}
