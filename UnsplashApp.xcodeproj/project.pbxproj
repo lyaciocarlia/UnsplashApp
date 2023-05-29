@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		191C7FF82A252D7700098730 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191C7FF72A252D7700098730 /* CustomTextField.swift */; };
 		1937E8382A1F3D45007A07AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E8372A1F3D45007A07AE /* AppDelegate.swift */; };
 		1937E8412A1F3D47007A07AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1937E8402A1F3D47007A07AE /* Assets.xcassets */; };
 		1937E8442A1F3D47007A07AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1937E8422A1F3D47007A07AE /* LaunchScreen.storyboard */; };
@@ -916,7 +917,6 @@
 				1937E8E12A1F8B5F007A07AE /* RootTabbarViewModelProtocol.swift in Sources */,
 				1937E8CF2A1F8A92007A07AE /* ForgotPasswordViewProtocol.swift in Sources */,
 				1937E9432A1F8ECE007A07AE /* UnsplashStorageServiceProtocol.swift in Sources */,
-				194DB2FC2A223AAC00A7915A /* CustomTextField.swift in Sources */,
 				1937E9012A1F8C2D007A07AE /* PictureDetailsViewModel.swift in Sources */,
 				1937E8F12A1F8BDE007A07AE /* BrowseViewModel.swift in Sources */,
 				1937E8D12A1F8AA6007A07AE /* ForgotPasswordViewModelProtocol.swift in Sources */,

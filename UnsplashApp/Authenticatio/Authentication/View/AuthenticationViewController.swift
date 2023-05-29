@@ -43,4 +43,3 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
         coordinator.finishAuthentication()
     }
 }
-

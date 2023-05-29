@@ -10,11 +10,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateAccountViewController" customModule="UnsplashApp" customModuleProvider="target">
             <connections>
+                <outlet property="confirmPasswordTextField" destination="G2Z-pu-IQw" id="XB4-Rv-a8Y"/>
                 <outlet property="createAccountButton" destination="t2Y-zt-kUp" id="R3M-Kf-yRT"/>
                 <outlet property="emailTextFeild" destination="FLy-0T-AGb" id="biF-ZD-kV0"/>
                 <outlet property="errorMessageLabel" destination="gid-Ug-ZKm" id="aEt-RU-ygd"/>
                 <outlet property="passwordTextField" destination="O9h-Ev-bKx" id="LNi-dJ-y7Y"/>
-                <outlet property="repeatPasswordTextField" destination="G2Z-pu-IQw" id="816-Oa-01Q"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -37,7 +37,6 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="clv-gs-fPU"/>
                             </constraints>
-                            <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
@@ -53,7 +52,6 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="Era-hw-CdQ"/>
                             </constraints>
-                            <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
@@ -69,7 +67,6 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="7Wb-KF-hPZ"/>
                             </constraints>
-                            <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
