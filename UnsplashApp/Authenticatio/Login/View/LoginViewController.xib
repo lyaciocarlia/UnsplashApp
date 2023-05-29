@@ -13,7 +13,6 @@
                 <outlet property="emailTextField" destination="804-9y-XJR" id="uI3-Dh-MT0"/>
                 <outlet property="fadedImage" destination="cJ8-U2-SuX" id="SYE-Ag-hB2"/>
                 <outlet property="passwordTextField" destination="AbD-rs-oNn" id="Ibr-tH-96L"/>
-                <outlet property="fadedImage" destination="cJ8-U2-SuX" id="SYE-Ag-hB2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,18 +23,6 @@
             <subviews>
                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="804-9y-XJR" customClass="CustomTextField" customModule="UnsplashApp" customModuleProvider="target">
                     <rect key="frame" x="49" y="297.33333333333331" width="295" height="18.666666666666686"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
-                </textField>
-                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AbD-rs-oNn" customClass="CustomTextField" customModule="UnsplashApp" customModuleProvider="target">
-                    <rect key="frame" x="49" y="346" width="295" height="18.666666666666686"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dd8-Xf-rY1">
-                    <rect key="frame" x="49" y="396.66666666666669" width="295" height="48"/>
-                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="804-9y-XJR">
-                    <rect key="frame" x="49" y="297.33333333333331" width="295" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                 </textField>

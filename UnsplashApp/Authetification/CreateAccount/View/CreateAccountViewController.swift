@@ -9,7 +9,7 @@ import UIKit
 
 class CreateAccountViewController: UIViewController, CreateAccountViewProtocol {
 
-    var viewModel: CreateAccountViewModelProtocol?
+    var viewModel: AuthenticationViewModel?
     var coordinator: AuthetificationCoordinatorProtocol?
     
     @IBOutlet weak var emailTextFeild: UITextField!
@@ -22,15 +22,22 @@ class CreateAccountViewController: UIViewController, CreateAccountViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerKeyboardNotifcations()
-    }
-    
-    @IBAction func confirm(_ sender: Any) {
-        viewModel?.authenticate(username: "", password: "")
         viewModel?.isAuthenticated.bind { [weak self] isAuthenticated in
             if isAuthenticated {
                 self?.authenticationSuccessful()
             }
         }
+        viewModel?.createAccError.bind { [weak self] createAccError in
+            if createAccError {
+                self?.authenticationSuccessful()
+            }
+        }
+    }
+    
+    func alert(
+    
+    @IBAction func confirm(_ sender: Any) {
+        viewModel?.createAcc(email: emailTextFeild.text ?? "", password: passwordTextField.text ?? "")
     }
     
     func authenticationSuccessful() {
@@ -54,14 +61,14 @@ class CreateAccountViewController: UIViewController, CreateAccountViewProtocol {
     }
 
     @objc private func keyboardWillShow(notification: NSNotification) {
-        topLabelConstraint.constant -= 30
+        topLabelConstraint.constant = 265
         UIView.animate(withDuration: 0.3) {
                self.view.layoutIfNeeded()
            }
     }
 
     @objc private func keyaboardWillHide() {
-        topLabelConstraint.constant += 30
+        topLabelConstraint.constant = 315
         UIView.animate(withDuration: 0.3) {
                self.view.layoutIfNeeded()
            }
