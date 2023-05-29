@@ -9,14 +9,14 @@ import UIKit
 
 class LoginViewController: UIViewController, LoginViewProtocol {
     
-    var viewModel: LoginViewModelProtocol
+    var viewModel: AuthenticationViewModel
     var coordinator: AuthenticationCoordinatorProtocol
     
     @IBOutlet weak var fadedImage: UIImageView!
     @IBOutlet weak var emailTextField: CustomTextField!
     @IBOutlet weak var passwordTextField: CustomTextField!
     
-    init(viewModel: LoginViewModelProtocol, coordinator: AuthenticationCoordinatorProtocol) {
+    init(viewModel: AuthenticationViewModel, coordinator: AuthenticationCoordinatorProtocol) {
         self.viewModel = viewModel
         self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
