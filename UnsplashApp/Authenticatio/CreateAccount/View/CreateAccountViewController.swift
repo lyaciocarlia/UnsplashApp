@@ -8,7 +8,7 @@
 import UIKit
 
 class CreateAccountViewController: UIViewController, CreateAccountViewProtocol {    
-
+    
     var viewModel: AuthenticationViewModel
     var coordinator: AuthenticationCoordinatorProtocol
     
@@ -29,6 +29,18 @@ class CreateAccountViewController: UIViewController, CreateAccountViewProtocol {
         fatalError("init(coder:) has not been implemented")
     }
     
+    @IBAction func confirm(_ sender: Any) {
+        viewModel.createAcc(email: emailTextFeild.text ?? "", password: passwordTextField.text ?? "")
+    }
+    
+    func authenticationSuccessful() {
+        coordinator.finishAuthentication()
+    }
+}
+
+//MARK: - LIFE CYCLE
+
+extension CreateAccountViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerKeyboardNotifcations()
@@ -38,22 +50,18 @@ class CreateAccountViewController: UIViewController, CreateAccountViewProtocol {
             }
         }
         viewModel.createAccError.bind { [weak self] createAccError in
-//            if createAccError {
-//                self?.authenticationSuccessful()
-//            }
+            switch createAccError {
+            case nil: self?.authenticationSuccessful()
+            case " ": break
+            default: self?.showAlert(status: createAccError!)
+            }
         }
     }
-    
-    //func alert(
-    
-    @IBAction func confirm(_ sender: Any) {
-        viewModel.createAcc(email: emailTextFeild.text ?? "", password: passwordTextField.text ?? "")
-    }
-    
-    func authenticationSuccessful() {
-        coordinator.finishAuthentication()
-    }
-    
+}
+
+//MARK: - KEYBOARD SETUP
+
+extension CreateAccountViewController {
     private func registerKeyboardNotifcations() {
 
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
@@ -84,4 +92,32 @@ class CreateAccountViewController: UIViewController, CreateAccountViewProtocol {
            }
     }
 
+}
+
+//MARK: - SHOW ALERT
+
+extension CreateAccountViewController {
+    func showAlert(status: String ) {
+        var alertMessage: String
+        var title: String
+        switch status {
+        case KeychainManager.KeychainError.duplicateEntry.localizedDescription:
+            alertMessage = "An account with this email already exists."
+            title = "Account already exists"
+        case KeychainManager.KeychainError.unknown(OSStatus()).localizedDescription :
+            alertMessage = "An unknown error occurred when creating the account."
+            title = "Unknown error"
+        default:
+            alertMessage = ""
+            title = ""
+        }
+    
+        let alertController = UIAlertController(title: title, message: alertMessage, preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+        }
+        
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
 }

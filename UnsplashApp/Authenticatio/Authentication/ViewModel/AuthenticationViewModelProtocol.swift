@@ -9,5 +9,5 @@ import Foundation
 
 protocol AuthenticationViewModelProtocol {
     var isAuthenticated: Observable <Bool> { get }
-    func authenticate(email: String, password: String)
+    func login(email: String, password: String)
 }

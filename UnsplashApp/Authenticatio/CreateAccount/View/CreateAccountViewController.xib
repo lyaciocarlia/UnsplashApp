@@ -15,6 +15,7 @@
                 <outlet property="emailTextFeild" destination="FLy-0T-AGb" id="biF-ZD-kV0"/>
                 <outlet property="errorMessageLabel" destination="gid-Ug-ZKm" id="aEt-RU-ygd"/>
                 <outlet property="passwordTextField" destination="O9h-Ev-bKx" id="LNi-dJ-y7Y"/>
+                <outlet property="topLabelConstraint" destination="YrR-rJ-0Zp" id="z2c-Ns-y34"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -100,6 +101,9 @@
                                 </backgroundConfiguration>
                                 <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
                             </buttonConfiguration>
+                            <connections>
+                                <action selector="confirm:" destination="-1" eventType="touchUpInside" id="0dj-G1-9qI"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>

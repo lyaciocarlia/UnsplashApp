@@ -19,11 +19,7 @@ class AuthentitacionService: AuthenticationServiceProtocol {
         let status = saveAccount(user: user)
         return status
     }
-    
-    func forgotPass() {
-        
-    }
-    
+
     func saveAccount(user: User) -> Error? {
         do {
             try KeychainManager.saveAccount(user: user)

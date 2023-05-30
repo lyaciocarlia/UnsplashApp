@@ -42,7 +42,34 @@ class LoginViewController: UIViewController, LoginViewProtocol {
         coordinator.finishAuthentication()
     }
     
+    func wrongPassOrEmail() {
+        let alertController = UIAlertController(title: "Could not login", message: "Wrong email or password.", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in }
+        
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)  
+    }
+    
 }
+
+//MARK: - SETUP BINDINGS
+
+extension LoginViewController {
+    private func setupBindings() {
+        viewModel.isAuthenticated.bind { [weak self] isAuthenticated in
+            if isAuthenticated {
+                self?.authenticationSuccessful()
+            }
+        }
+        viewModel.wrongPassOrEmail.bind { [weak self] wrongPassOrEmail in
+            if wrongPassOrEmail {
+                self?.wrongPassOrEmail()
+            }
+        }
+    }
+}
+
 
 // MARK: - LIFE CYCLE
 
@@ -50,11 +77,7 @@ extension LoginViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        viewModel.isAuthenticated.bind { [weak self] isAuthenticated in
-            if isAuthenticated {
-                self?.authenticationSuccessful()
-            }
-        }
+        setupBindings()
     }
 }
 
@@ -105,7 +128,7 @@ extension LoginViewController: UITextFieldDelegate {
     
     private func authenticate() {
         passwordTextField.resignFirstResponder()
-        viewModel.authenticate(email: emailTextField.text ?? "", password: passwordTextField.text ?? "" )
+        viewModel.login(email: emailTextField.text ?? "", password: passwordTextField.text ?? "" )
     }
     
     func setupTextField(textField: UITextField) {

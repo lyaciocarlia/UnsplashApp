@@ -6,29 +6,27 @@
 //
 
 import Foundation
+import Security
 
 class KeychainManager {
     
     public enum KeychainError: Error {
         case duplicateEntry
         case unknown(OSStatus)
-        case succes
     }
     
     static func saveAccount(user: User) throws {
-        let query: [String: AnyObject] = [
+        let query = [
             kSecClass as String : kSecClassGenericPassword,
-            kSecAttrServer as String : "Unsplash.app" as AnyObject,
             kSecAttrAccount as String : user.email as AnyObject,
-            kSecValueData as String : user.password as AnyObject
-        ]
+            kSecValueData as String : user.password.data(using: .utf8) as AnyObject
+        ] as CFDictionary
         
-        let status = SecItemAdd(query as CFDictionary, nil)
+        let status = SecItemAdd(query, nil)
         
         guard status != errSecDuplicateItem else {
             throw KeychainError.duplicateEntry
         }
-        
         guard status == errSecSuccess else {
             throw KeychainError.unknown (status)
         }
@@ -37,15 +35,14 @@ class KeychainManager {
     static func getPassword(for email: String) -> Data? {
         let query: [String: AnyObject] = [
             kSecClass as String : kSecClassGenericPassword,
-            kSecAttrServer as String : "Unsplash.app" as AnyObject,
             kSecAttrAccount as String : email as AnyObject,
             kSecReturnData as String : kCFBooleanTrue,
-            kSecMatchLimit as String : kSecMatchLimit
+            kSecMatchLimit as String : kSecMatchLimitOne
         ]
-        
+    
         var result: AnyObject?
         
-        let status = SecItemCopyMatching(query as CFDictionary, &result)
+        SecItemCopyMatching(query as CFDictionary, &result)
         return result as? Data
     }
 }
