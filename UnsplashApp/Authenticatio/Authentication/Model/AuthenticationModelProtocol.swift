@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct User: UserProtocol {
-    var email: String
-    var password: String
+protocol UserProtocol {
+    var email: String { get set }
+    var password: String { get set }
 }

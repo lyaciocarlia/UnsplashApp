@@ -9,10 +9,10 @@ import UIKit
 
 class ForgotPasswordViewController: UIViewController, ForgotPasswordViewProtocol {
     
-    var viewModel: ForgotPasswordViewModelProtocol
+    var viewModel: AuthenticationViewModelProtocol
     var coordinator: AuthenticationCoordinatorProtocol
     
-    init(viewModel: ForgotPasswordViewModelProtocol, coordinator: AuthenticationCoordinatorProtocol) {
+    init(viewModel: AuthenticationViewModelProtocol, coordinator: AuthenticationCoordinatorProtocol) {
         self.viewModel = viewModel
         self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)

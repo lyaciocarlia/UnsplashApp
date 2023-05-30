@@ -9,6 +9,6 @@ import Foundation
 import UIKit
 
 protocol ForgotPasswordViewProtocol: UIViewController {
-    var viewModel: ForgotPasswordViewModelProtocol { get set }
+    var viewModel: AuthenticationViewModelProtocol { get set }
     var coordinator: AuthenticationCoordinatorProtocol { get set }
 }

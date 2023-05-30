@@ -10,7 +10,7 @@ import Foundation
 
 class ForgotPasswordBuilder {
     func build(coordinator: AuthenticationCoordinator) -> ForgotPasswordViewProtocol {
-        let viewModel = ForgotPasswordViewModel()
+        let viewModel = AuthenticationViewModel()
         let view = ForgotPasswordViewController(viewModel: viewModel, coordinator: coordinator)
         return view
     }

@@ -28,24 +28,12 @@
 		1937E8AC2A1F899D007A07AE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E8AA2A1F899D007A07AE /* LoginViewController.swift */; };
 		1937E8AD2A1F899D007A07AE /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1937E8AB2A1F899D007A07AE /* LoginViewController.xib */; };
 		1937E8AF2A1F89AC007A07AE /* LoginViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E8AE2A1F89AC007A07AE /* LoginViewProtocol.swift */; };
-		1937E8B12A1F89C3007A07AE /* LoginViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E8B02A1F89C3007A07AE /* LoginViewModelProtocol.swift */; };
-		1937E8B32A1F89CB007A07AE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E8B22A1F89CB007A07AE /* LoginViewModel.swift */; };
-		1937E8B52A1F89E3007A07AE /* LoginModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E8B42A1F89E3007A07AE /* LoginModelProtocol.swift */; };
-		1937E8B72A1F89E9007A07AE /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E8B62A1F89E9007A07AE /* LoginModel.swift */; };
 		1937E8B92A1F8A01007A07AE /* CreateAccountBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E8B82A1F8A01007A07AE /* CreateAccountBuilder.swift */; };
 		1937E8BF2A1F8A21007A07AE /* CreateAccountViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E8BE2A1F8A21007A07AE /* CreateAccountViewProtocol.swift */; };
-		1937E8C12A1F8A34007A07AE /* CreateAccountViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E8C02A1F8A34007A07AE /* CreateAccountViewModelProtocol.swift */; };
-		1937E8C32A1F8A3A007A07AE /* CreateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E8C22A1F8A3A007A07AE /* CreateAccountViewModel.swift */; };
-		1937E8C52A1F8A47007A07AE /* CreateAccountModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E8C42A1F8A47007A07AE /* CreateAccountModelProtocol.swift */; };
-		1937E8C72A1F8A4C007A07AE /* CreateAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E8C62A1F8A4C007A07AE /* CreateAccountModel.swift */; };
 		1937E8C92A1F8A6A007A07AE /* ForgotPasswordBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E8C82A1F8A6A007A07AE /* ForgotPasswordBuilder.swift */; };
 		1937E8CC2A1F8A7D007A07AE /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E8CA2A1F8A7C007A07AE /* ForgotPasswordViewController.swift */; };
 		1937E8CD2A1F8A7D007A07AE /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1937E8CB2A1F8A7D007A07AE /* ForgotPasswordViewController.xib */; };
 		1937E8CF2A1F8A92007A07AE /* ForgotPasswordViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E8CE2A1F8A92007A07AE /* ForgotPasswordViewProtocol.swift */; };
-		1937E8D12A1F8AA6007A07AE /* ForgotPasswordViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E8D02A1F8AA6007A07AE /* ForgotPasswordViewModelProtocol.swift */; };
-		1937E8D32A1F8AAD007A07AE /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E8D22A1F8AAD007A07AE /* ForgotPasswordViewModel.swift */; };
-		1937E8D52A1F8AC2007A07AE /* ForgotPasswordModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E8D42A1F8AC2007A07AE /* ForgotPasswordModelProtocol.swift */; };
-		1937E8D72A1F8AC8007A07AE /* ForgotPasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E8D62A1F8AC8007A07AE /* ForgotPasswordModel.swift */; };
 		1937E8D92A1F8B2B007A07AE /* RootTabbarBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E8D82A1F8B2B007A07AE /* RootTabbarBuilder.swift */; };
 		1937E8DC2A1F8B44007A07AE /* RootTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E8DA2A1F8B44007A07AE /* RootTabbarViewController.swift */; };
 		1937E8DD2A1F8B44007A07AE /* RootTabbarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1937E8DB2A1F8B44007A07AE /* RootTabbarViewController.xib */; };
@@ -132,24 +120,12 @@
 		1937E8AA2A1F899D007A07AE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1937E8AB2A1F899D007A07AE /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		1937E8AE2A1F89AC007A07AE /* LoginViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewProtocol.swift; sourceTree = "<group>"; };
-		1937E8B02A1F89C3007A07AE /* LoginViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelProtocol.swift; sourceTree = "<group>"; };
-		1937E8B22A1F89CB007A07AE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		1937E8B42A1F89E3007A07AE /* LoginModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModelProtocol.swift; sourceTree = "<group>"; };
-		1937E8B62A1F89E9007A07AE /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		1937E8B82A1F8A01007A07AE /* CreateAccountBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountBuilder.swift; sourceTree = "<group>"; };
 		1937E8BE2A1F8A21007A07AE /* CreateAccountViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewProtocol.swift; sourceTree = "<group>"; };
-		1937E8C02A1F8A34007A07AE /* CreateAccountViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModelProtocol.swift; sourceTree = "<group>"; };
-		1937E8C22A1F8A3A007A07AE /* CreateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModel.swift; sourceTree = "<group>"; };
-		1937E8C42A1F8A47007A07AE /* CreateAccountModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountModelProtocol.swift; sourceTree = "<group>"; };
-		1937E8C62A1F8A4C007A07AE /* CreateAccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountModel.swift; sourceTree = "<group>"; };
 		1937E8C82A1F8A6A007A07AE /* ForgotPasswordBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordBuilder.swift; sourceTree = "<group>"; };
 		1937E8CA2A1F8A7C007A07AE /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		1937E8CB2A1F8A7D007A07AE /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
 		1937E8CE2A1F8A92007A07AE /* ForgotPasswordViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewProtocol.swift; sourceTree = "<group>"; };
-		1937E8D02A1F8AA6007A07AE /* ForgotPasswordViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModelProtocol.swift; sourceTree = "<group>"; };
-		1937E8D22A1F8AAD007A07AE /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
-		1937E8D42A1F8AC2007A07AE /* ForgotPasswordModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordModelProtocol.swift; sourceTree = "<group>"; };
-		1937E8D62A1F8AC8007A07AE /* ForgotPasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordModel.swift; sourceTree = "<group>"; };
 		1937E8D82A1F8B2B007A07AE /* RootTabbarBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabbarBuilder.swift; sourceTree = "<group>"; };
 		1937E8DA2A1F8B44007A07AE /* RootTabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabbarViewController.swift; sourceTree = "<group>"; };
 		1937E8DB2A1F8B44007A07AE /* RootTabbarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootTabbarViewController.xib; sourceTree = "<group>"; };
@@ -321,8 +297,6 @@
 			children = (
 				1937E85A2A1F3EED007A07AE /* Builder */,
 				1937E85B2A1F3EF4007A07AE /* View */,
-				1937E85C2A1F3F2B007A07AE /* ViewModel */,
-				1937E85D2A1F3F34007A07AE /* Model */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -346,51 +320,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		1937E85C2A1F3F2B007A07AE /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				1937E8B02A1F89C3007A07AE /* LoginViewModelProtocol.swift */,
-				1937E8B22A1F89CB007A07AE /* LoginViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		1937E85D2A1F3F34007A07AE /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				1937E8B42A1F89E3007A07AE /* LoginModelProtocol.swift */,
-				1937E8B62A1F89E9007A07AE /* LoginModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		1937E85E2A1F3F5F007A07AE /* CreateAccount */ = {
 			isa = PBXGroup;
 			children = (
 				1937E86A2A1F4047007A07AE /* Builder */,
 				1937E8692A1F4040007A07AE /* View */,
-				1937E8682A1F4038007A07AE /* ViewModel */,
-				1937E8672A1F402E007A07AE /* Model */,
 			);
 			path = CreateAccount;
-			sourceTree = "<group>";
-		};
-		1937E8672A1F402E007A07AE /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				1937E8C42A1F8A47007A07AE /* CreateAccountModelProtocol.swift */,
-				1937E8C62A1F8A4C007A07AE /* CreateAccountModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		1937E8682A1F4038007A07AE /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				1937E8C02A1F8A34007A07AE /* CreateAccountViewModelProtocol.swift */,
-				1937E8C22A1F8A3A007A07AE /* CreateAccountViewModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		1937E8692A1F4040007A07AE /* View */ = {
@@ -416,28 +352,8 @@
 			children = (
 				1937E86F2A1F40E7007A07AE /* Builder */,
 				1937E86E2A1F40E0007A07AE /* View */,
-				1937E86D2A1F40D8007A07AE /* ViewModel */,
-				1937E86C2A1F40D2007A07AE /* Model */,
 			);
 			path = ForgotPassword;
-			sourceTree = "<group>";
-		};
-		1937E86C2A1F40D2007A07AE /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				1937E8D42A1F8AC2007A07AE /* ForgotPasswordModelProtocol.swift */,
-				1937E8D62A1F8AC8007A07AE /* ForgotPasswordModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		1937E86D2A1F40D8007A07AE /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				1937E8D02A1F8AA6007A07AE /* ForgotPasswordViewModelProtocol.swift */,
-				1937E8D22A1F8AAD007A07AE /* ForgotPasswordViewModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		1937E86E2A1F40E0007A07AE /* View */ = {
@@ -919,13 +835,9 @@
 				1937E9432A1F8ECE007A07AE /* UnsplashStorageServiceProtocol.swift in Sources */,
 				1937E9012A1F8C2D007A07AE /* PictureDetailsViewModel.swift in Sources */,
 				1937E8F12A1F8BDE007A07AE /* BrowseViewModel.swift in Sources */,
-				1937E8D12A1F8AA6007A07AE /* ForgotPasswordViewModelProtocol.swift in Sources */,
 				1937E9492A1FAABF007A07AE /* AuthenticationObservable.swift in Sources */,
-				1937E8D32A1F8AAD007A07AE /* ForgotPasswordViewModel.swift in Sources */,
 				1937E8E52A1F8B8E007A07AE /* RootTabbarModelProtocol.swift in Sources */,
 				1937E8E92A1F8BB0007A07AE /* BrowseBuilder.swift in Sources */,
-				1937E8B72A1F89E9007A07AE /* LoginModel.swift in Sources */,
-				1937E8C72A1F8A4C007A07AE /* CreateAccountModel.swift in Sources */,
 				1937E90E2A1F8CA5007A07AE /* LikesViewController.swift in Sources */,
 				1937E8742A1F4149007A07AE /* BrowseCoordinatorProtocol.swift in Sources */,
 				1937E9332A1F8E77007A07AE /* ChangePasswordViewModelProtocol.swift in Sources */,
@@ -940,27 +852,19 @@
 				1937E9112A1F8CB3007A07AE /* LikesViewModel.swift in Sources */,
 				1937E8A32A1F895C007A07AE /* AuthenticationViewModel.swift in Sources */,
 				1937E8DF2A1F8B4E007A07AE /* RootTabbarViewProtocol.swift in Sources */,
-				1937E8C32A1F8A3A007A07AE /* CreateAccountViewModel.swift in Sources */,
-				1937E8B32A1F89CB007A07AE /* LoginViewModel.swift in Sources */,
-				1937E8B12A1F89C3007A07AE /* LoginViewModelProtocol.swift in Sources */,
 				1937E8EC2A1F8BC3007A07AE /* BrowseViewController.swift in Sources */,
 				1937E9252A1F8DFE007A07AE /* SettingsModel.swift in Sources */,
 				1937E90B2A1F8C99007A07AE /* LikesViewProtocol.swift in Sources */,
 				1937E8F52A1F8BF1007A07AE /* BrowseModelProtocol.swift in Sources */,
-				1937E8D52A1F8AC2007A07AE /* ForgotPasswordModelProtocol.swift in Sources */,
-				1937E8C52A1F8A47007A07AE /* CreateAccountModelProtocol.swift in Sources */,
 				1937E8DC2A1F8B44007A07AE /* RootTabbarViewController.swift in Sources */,
 				1937E9372A1F8E8E007A07AE /* ChangePasswordModelProtocol.swift in Sources */,
 				1937E9212A1F8DEB007A07AE /* SettingsViewModel.swift in Sources */,
 				1937E8F72A1F8BF6007A07AE /* BrowseModel.swift in Sources */,
 				1937E9072A1F8C5E007A07AE /* PictureDetailsModelProtocol.swift in Sources */,
 				1937E8AF2A1F89AC007A07AE /* LoginViewProtocol.swift in Sources */,
-				1937E8C12A1F8A34007A07AE /* CreateAccountViewModelProtocol.swift in Sources */,
 				1937E9452A1F8EDB007A07AE /* AuthentificationService.swift in Sources */,
 				1937E89C2A1F890E007A07AE /* AuthenticationViewController.swift in Sources */,
 				1937E9392A1F8EA6007A07AE /* AppService.swift in Sources */,
-				1937E8D72A1F8AC8007A07AE /* ForgotPasswordModel.swift in Sources */,
-				1937E8B52A1F89E3007A07AE /* LoginModelProtocol.swift in Sources */,
 				1937E9132A1F8CB9007A07AE /* LikesViewModelProtocol.swift in Sources */,
 				1937E91B2A1F8D09007A07AE /* SettingsViewProtocol.swift in Sources */,
 				1937E8EF2A1F8BD0007A07AE /* BrowseViewProtocol.swift in Sources */,
