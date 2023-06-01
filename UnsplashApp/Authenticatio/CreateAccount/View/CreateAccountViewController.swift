@@ -15,6 +15,7 @@ class CreateAccountViewController: UIViewController, CreateAccountViewProtocol {
     @IBOutlet weak var emailTextFeild: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
+    @IBOutlet weak var repeatPasswordUnderlineVIew: UIView!
     @IBOutlet weak var errorMessageLabel: UILabel!
     @IBOutlet weak var createAccountButton: UIButton!
     @IBOutlet weak var botButtonConstraint: NSLayoutConstraint!
@@ -45,10 +46,16 @@ class CreateAccountViewController: UIViewController, CreateAccountViewProtocol {
         viewModel.comparePasswords(target: passwordTextField.text ?? "", with: confirmPasswordTextField.text ?? "")
         errorMessageLabel.isHidden = viewModel.isPasswordEquals.value
         createAccountButton.isEnabled = viewModel.isPasswordEquals.value
+        repeatPasswordUnderlineVIew.backgroundColor = !viewModel.isPasswordEquals.value ? .systemRed : .black
     }
     
     func authenticationSuccessful() {
         coordinator.finishAuthentication()
+    }
+    
+    private func updateFieldColor () {
+        let isValidCredentials = viewModel.isPasswordEquals.value
+        confirmPasswordTextField.textColor = !isValidCredentials ? .systemRed : .black
     }
 }
 
@@ -68,6 +75,9 @@ extension CreateAccountViewController {
             case " ": break
             default: self?.showAlert(status: createAccError!)
             }
+        }
+        viewModel.isPasswordEquals.bind { [weak self] _ in
+            self?.updateFieldColor()
         }
     }
 }

@@ -14,6 +14,7 @@ class ForgotPasswordViewController: UIViewController, ForgotPasswordViewProtocol
     @IBOutlet weak var botButtonConstraint: NSLayoutConstraint!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var errorMessageLabel: UILabel!
+    @IBOutlet weak var emailUnderlineView: UIView!
     @IBOutlet weak var confirmButton: UIButton!
     
     init(viewModel: AuthenticationViewModelProtocol, coordinator: AuthenticationCoordinatorProtocol) {
@@ -28,6 +29,7 @@ class ForgotPasswordViewController: UIViewController, ForgotPasswordViewProtocol
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpBinds()
         registerKeyboardNotifcations()
 
     }
@@ -52,6 +54,12 @@ class ForgotPasswordViewController: UIViewController, ForgotPasswordViewProtocol
        viewModel.validateEmail(emailTextField.text ?? "")
         errorMessageLabel.isHidden = viewModel.isValidEmail.value
         confirmButton.isEnabled = viewModel.isValidEmail.value
+        emailUnderlineView.backgroundColor = !viewModel.isValidEmail.value ? .systemRed : .black
+    }
+    
+    private func updateFieldColor () {
+        let isValidCredentials = viewModel.isValidEmail.value
+        emailTextField.textColor = !isValidCredentials ? .systemRed : .black
     }
     
 }
@@ -90,5 +98,15 @@ extension ForgotPasswordViewController {
         UIView.animate(withDuration: 0.3) {
                self.view.layoutIfNeeded()
            }
+    }
+}
+
+//MARK: - SET UP BINDS
+
+extension ForgotPasswordViewController {
+    private func setUpBinds() {
+        viewModel.isValidEmail.bind { [weak self] _ in
+            self?.updateFieldColor()
+        }
     }
 }

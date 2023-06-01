@@ -69,6 +69,11 @@ class LoginViewController: UIViewController, LoginViewProtocol {
     private func updateButtonStatus() {
         loginButton.isEnabled = viewModel.isValidEmail.value && viewModel.isValidPassword.value
     }
+    
+    private func updatePasswordFieldColor () {
+        let isValidPassword = viewModel.isValidPassword.value
+        passwordTextField.textColor = !isValidPassword ? .systemRed : .black
+    }
 }
 
 //MARK: - SETUP BINDINGS
@@ -84,6 +89,9 @@ extension LoginViewController {
             if wrongPassOrEmail {
                 self?.showErrorCredentialsAlert()
             }
+        }
+        viewModel.isValidPassword.bind { [weak self] _ in
+                self?.updatePasswordFieldColor()
         }
     }
 }
