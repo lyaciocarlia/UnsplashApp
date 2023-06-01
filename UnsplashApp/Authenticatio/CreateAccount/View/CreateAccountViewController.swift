@@ -17,7 +17,7 @@ class CreateAccountViewController: UIViewController, CreateAccountViewProtocol {
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet weak var errorMessageLabel: UILabel!
     @IBOutlet weak var createAccountButton: UIButton!
-    @IBOutlet weak var topLabelConstraint: NSLayoutConstraint!
+    @IBOutlet weak var botButtonConstraint: NSLayoutConstraint!
     
     init(viewModel: AuthenticationViewModel, coordinator: AuthenticationCoordinatorProtocol) {
         self.viewModel = viewModel
@@ -33,13 +33,26 @@ class CreateAccountViewController: UIViewController, CreateAccountViewProtocol {
         viewModel.createAcc(email: emailTextFeild.text ?? "", password: passwordTextField.text ?? "")
     }
     
+    @IBAction func emailFiledChanged(_ sender: Any) {
+        viewModel.validateEmail(emailTextFeild.text ?? "")
+    }
+    
+    @IBAction func passwordFieldChanged(_ sender: Any) {
+        viewModel.validatePassword(passwordTextField.text ?? "")
+    }
+    
+    @IBAction func repeatedPasswordFieldChanged(_ sender: Any) {
+        viewModel.comparePasswords(target: passwordTextField.text ?? "", with: confirmPasswordTextField.text ?? "")
+        errorMessageLabel.isHidden = viewModel.isPasswordEquals.value
+        createAccountButton.isEnabled = viewModel.isPasswordEquals.value
+    }
+    
     func authenticationSuccessful() {
         coordinator.finishAuthentication()
     }
 }
 
 //MARK: - LIFE CYCLE
-
 extension CreateAccountViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,14 +92,17 @@ extension CreateAccountViewController {
     }
 
     @objc private func keyboardWillShow(notification: NSNotification) {
-        topLabelConstraint.constant = 265
-        UIView.animate(withDuration: 0.3) {
-               self.view.layoutIfNeeded()
-           }
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            let keyboardHeight = keyboardSize.height
+            botButtonConstraint.constant = keyboardHeight + 10
+            UIView.animate(withDuration: 0.3) {
+                   self.view.layoutIfNeeded()
+               }
+        }
     }
-
+    
     @objc private func keyaboardWillHide() {
-        topLabelConstraint.constant = 315
+        botButtonConstraint.constant = 206
         UIView.animate(withDuration: 0.3) {
                self.view.layoutIfNeeded()
            }

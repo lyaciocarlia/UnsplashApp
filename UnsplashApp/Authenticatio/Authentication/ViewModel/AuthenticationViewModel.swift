@@ -12,6 +12,10 @@ class AuthenticationViewModel: AuthenticationViewModelProtocol {
     
     var isAuthenticated: Observable<Bool> = Observable(false)
     var wrongPassOrEmail: Observable<Bool> = Observable(false)
+    var isValidEmail: Observable<Bool> = Observable(false)
+    var isValidPassword: Observable<Bool> = Observable(false)
+    var isErrorMessageHiden: Observable<Bool> = Observable(true)
+    var isPasswordEquals: Observable<Bool> = Observable(false)
     var createAccError: Observable<String?> = Observable(" ")
     let service: AppServiceProtocol = AppService()
     
@@ -32,6 +36,24 @@ class AuthenticationViewModel: AuthenticationViewModelProtocol {
             self.isAuthenticated.value = true
         } else {
             self.createAccError.value = status!.localizedDescription
+        }
+    }
+    
+    func validateEmail(_ email: String) {
+        let emailRegex = "@gmail.com"
+        self.isValidEmail.value =  email.hasSuffix(emailRegex)
+    }
+    
+    func validatePassword(_ password: String) {
+        self.isValidPassword.value = password.count > 4
+        self.isErrorMessageHiden.value = password.count > 4
+    }
+    
+    func comparePasswords(target password: String, with secondPassword: String) {
+        if secondPassword == password {
+            self.isPasswordEquals.value = true
+        } else {
+            self.isPasswordEquals.value = false
         }
     }
 }
