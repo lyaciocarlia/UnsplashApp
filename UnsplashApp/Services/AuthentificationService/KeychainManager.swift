@@ -17,7 +17,8 @@ class KeychainManager {
     
     static func saveAccount(user: User) throws {
         let query = [
-            kSecClass as String : kSecClassGenericPassword,
+            kSecClass as String : kSecClassInternetPassword,
+            kSecAttrServer as String : NSString(string: Constants.serviceName),
             kSecAttrAccount as String : user.email as AnyObject,
             kSecValueData as String : user.password.data(using: .utf8) as AnyObject
         ] as CFDictionary
@@ -28,12 +29,35 @@ class KeychainManager {
             throw KeychainError.duplicateEntry
         }
         guard status == errSecSuccess else {
+            print(status)
+
             throw KeychainError.unknown (status)
         }
     }
     
+    static func getAcc() -> Bool {
+        let query: [String: Any] = [
+                kSecClass as String: kSecClassInternetPassword,
+                kSecAttrServer as String: Constants.serviceName,
+                kSecMatchLimit as String: kSecMatchLimitAll,
+                kSecReturnAttributes as String: true
+            ]
+
+            var result: CFTypeRef?
+            let status = SecItemCopyMatching(query as CFDictionary, &result)
+            
+            if status == errSecSuccess {
+                if let items = result as? [[String: Any]] {
+                    return !items.isEmpty
+                }
+            }
+            
+            return false
+    }
+    
     static func getPassword(for email: String) -> Data? {
         let query: [String: AnyObject] = [
+            kSecAttrServer as String : NSString(string: Constants.serviceName),
             kSecClass as String : kSecClassGenericPassword,
             kSecAttrAccount as String : email as AnyObject,
             kSecReturnData as String : kCFBooleanTrue,

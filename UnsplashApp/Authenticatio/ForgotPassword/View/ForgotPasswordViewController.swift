@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ForgotPasswordViewController: UIViewController, ForgotPasswordViewProtocol {
+class ForgotPasswordViewController: UIViewController, ForgotPasswordViewProtocol, UITextFieldDelegate {
     
     var viewModel: AuthenticationViewModelProtocol
     var coordinator: AuthenticationCoordinatorProtocol
@@ -31,46 +31,67 @@ class ForgotPasswordViewController: UIViewController, ForgotPasswordViewProtocol
         super.viewDidLoad()
         setUpBinds()
         registerKeyboardNotifcations()
-
+        emailTextField.delegate = self
     }
     
     @IBAction func confirm(_ sender: Any) {
+        showPass()
+    }
+    
+    func showPass() {
         guard let email = emailTextField.text else { return }
-        guard let passwordData = KeychainManager.getPassword(for: email) else { return }
-        let password = String(decoding: passwordData, as: UTF8.self)
-
-        let alertWithPasword = UIAlertController(title: "REMEMBER!",
-                                                 message: "That's your passwod - \(password)",
+        var title = Constants.showPassErrorAlertTitle
+        var message = Constants.showPassErrorAlertMessage
+        if let passwordData = KeychainManager.getPassword(for: email) {
+            let password = String(decoding: passwordData, as: UTF8.self)
+            title = Constants.showPassAlertTitle
+            message = "\(Constants.showPassAlertMessage) \(password)"
+        }
+        
+        let alertWithPasword = UIAlertController(title: title,
+                                                 message: message,
                                                  preferredStyle: .alert)
         
-        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+        let okAction = UIAlertAction(title: Constants.okButton, style: .default) { _ in
             self.coordinator.goBackToLoginScreen()
         }
         alertWithPasword.addAction(okAction)
         self.present(alertWithPasword, animated: true, completion: nil)
     }
     
-    @IBAction func emailFieldChanged(_ sender: Any) {
-       viewModel.validateEmail(emailTextField.text ?? "")
-        errorMessageLabel.isHidden = viewModel.isValidEmail.value
-        confirmButton.isEnabled = viewModel.isValidEmail.value
-        emailUnderlineView.backgroundColor = !viewModel.isValidEmail.value ? .systemRed : .black
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = textField.text ?? ""
+        let updatedText = (currentText as NSString).replacingCharacters(in: range, with: string)
+        
+        if textField == emailTextField {
+            viewModel.validateEmail(updatedText)
+            errorMessageLabel.isHidden = viewModel.isValidEmail.value
+            confirmButton.isEnabled = viewModel.isValidEmail.value
+            emailUnderlineView.backgroundColor = !viewModel.isValidEmail.value ? .systemRed : .black
+            updateFieldColor()
+        }
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        showPass()
+        return true
     }
     
     private func updateFieldColor () {
         let isValidCredentials = viewModel.isValidEmail.value
         emailTextField.textColor = !isValidCredentials ? .systemRed : .black
     }
-    
 }
 
 //MARK: - KEYBOARD SETUP
 
 extension ForgotPasswordViewController {
     private func registerKeyboardNotifcations() {
-
+        
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
-
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification: )),
                                                name: UIResponder.keyboardWillShowNotification,
                                                object: nil)
@@ -78,26 +99,26 @@ extension ForgotPasswordViewController {
                                                name: UIResponder.keyboardWillHideNotification,
                                                object: nil)
     }
-
+    
     @objc private func hideKeyboard() {
         self.view.endEditing(true)
     }
-
+    
     @objc private func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             let keyboardHeight = keyboardSize.height
-            botButtonConstraint.constant = keyboardHeight + 10
-            UIView.animate(withDuration: 0.3) {
-                   self.view.layoutIfNeeded()
-               }
+            botButtonConstraint.constant = keyboardHeight + Constants.bottomConstraintIncrease
+            UIView.animate(withDuration: Constants.keyboardAnimationDuration) {
+                self.view.layoutIfNeeded()
+            }
         }
     }
     
     @objc private func keyaboardWillHide() {
-        botButtonConstraint.constant = 231
-        UIView.animate(withDuration: 0.3) {
-               self.view.layoutIfNeeded()
-           }
+        botButtonConstraint.constant = Constants.bottomConstraint
+        UIView.animate(withDuration: Constants.keyboardAnimationDuration) {
+            self.view.layoutIfNeeded()
+        }
     }
 }
 

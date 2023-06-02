@@ -8,6 +8,11 @@
 import Foundation
 
 class AuthentitacionService: AuthenticationServiceProtocol {
+    
+    func checkForAcc() -> Bool {
+        return KeychainManager.getAcc()
+    }
+    
     func login(email: String, password: String) -> Bool {
         let keychainPassword = String(decoding: getPassword(email: email), as: UTF8.self)
         if keychainPassword == password {

@@ -90,8 +90,9 @@
 		1937E9452A1F8EDB007A07AE /* AuthentificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E9442A1F8EDB007A07AE /* AuthentificationService.swift */; };
 		1937E9472A1F8EE4007A07AE /* AuthentificationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E9462A1F8EE4007A07AE /* AuthentificationServiceProtocol.swift */; };
 		1937E9492A1FAABF007A07AE /* AuthenticationObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1937E9482A1FAABF007A07AE /* AuthenticationObservable.swift */; };
+		194993AB2A29E9C2009FFAAF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194993AA2A29E9C2009FFAAF /* Constants.swift */; };
+		194993AD2A29F1C3009FFAAF /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194993AC2A29F1C3009FFAAF /* CustomTextField.swift */; };
 		194DB2FE2A235DA500A7915A /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194DB2FD2A235DA500A7915A /* KeychainManager.swift */; };
-		1980971D2A24DCAD007A30C2 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1980971C2A24DCAD007A30C2 /* CustomTextField.swift */; };
 		99DDEAF62A2343D70059B4C0 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DDEAF42A2343D60059B4C0 /* CreateAccountViewController.swift */; };
 		99DDEAF72A2343D70059B4C0 /* CreateAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99DDEAF52A2343D60059B4C0 /* CreateAccountViewController.xib */; };
 /* End PBXBuildFile section */
@@ -182,8 +183,9 @@
 		1937E9442A1F8EDB007A07AE /* AuthentificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationService.swift; sourceTree = "<group>"; };
 		1937E9462A1F8EE4007A07AE /* AuthentificationServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationServiceProtocol.swift; sourceTree = "<group>"; };
 		1937E9482A1FAABF007A07AE /* AuthenticationObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationObservable.swift; sourceTree = "<group>"; };
+		194993AA2A29E9C2009FFAAF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		194993AC2A29F1C3009FFAAF /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		194DB2FD2A235DA500A7915A /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
-		1980971C2A24DCAD007A30C2 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		99DDEAF42A2343D60059B4C0 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		99DDEAF52A2343D60059B4C0 /* CreateAccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateAccountViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -219,6 +221,7 @@
 		1937E8362A1F3D45007A07AE /* UnsplashApp */ = {
 			isa = PBXGroup;
 			children = (
+				194993AA2A29E9C2009FFAAF /* Constants.swift */,
 				1937E8372A1F3D45007A07AE /* AppDelegate.swift */,
 				1937E84B2A1F3DD7007A07AE /* MainCoordinator.swift */,
 				1937E84D2A1F3DE6007A07AE /* Authenticatio */,
@@ -311,10 +314,10 @@
 		1937E85B2A1F3EF4007A07AE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				194993AC2A29F1C3009FFAAF /* CustomTextField.swift */,
 				1937E8AA2A1F899D007A07AE /* LoginViewController.swift */,
 				1937E8AB2A1F899D007A07AE /* LoginViewController.xib */,
 				1937E8AE2A1F89AC007A07AE /* LoginViewProtocol.swift */,
-				1980971C2A24DCAD007A30C2 /* CustomTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -819,7 +822,6 @@
 				1937E8722A1F4144007A07AE /* BrowseCoordinator.swift in Sources */,
 				1937E9152A1F8CCB007A07AE /* LikesModel.swift in Sources */,
 				1937E8E72A1F8B93007A07AE /* RootTabbarModel.swift in Sources */,
-				1980971D2A24DCAD007A30C2 /* CustomTextField.swift in Sources */,
 				1937E8A72A1F8976007A07AE /* AuthenticationModel.swift in Sources */,
 				1937E8A52A1F8970007A07AE /* AuthenticationModelProtocol.swift in Sources */,
 				1937E9172A1F8CD1007A07AE /* LikesModelProtocol.swift in Sources */,
@@ -839,6 +841,7 @@
 				1937E8E92A1F8BB0007A07AE /* BrowseBuilder.swift in Sources */,
 				1937E90E2A1F8CA5007A07AE /* LikesViewController.swift in Sources */,
 				1937E8742A1F4149007A07AE /* BrowseCoordinatorProtocol.swift in Sources */,
+				194993AD2A29F1C3009FFAAF /* CustomTextField.swift in Sources */,
 				1937E9332A1F8E77007A07AE /* ChangePasswordViewModelProtocol.swift in Sources */,
 				1937E91E2A1F8DDF007A07AE /* SettingsViewController.swift in Sources */,
 				1937E9192A1F8CFD007A07AE /* SettingsBuilder.swift in Sources */,
@@ -853,6 +856,7 @@
 				1937E8DF2A1F8B4E007A07AE /* RootTabbarViewProtocol.swift in Sources */,
 				1937E8EC2A1F8BC3007A07AE /* BrowseViewController.swift in Sources */,
 				1937E9252A1F8DFE007A07AE /* SettingsModel.swift in Sources */,
+				194993AB2A29E9C2009FFAAF /* Constants.swift in Sources */,
 				1937E90B2A1F8C99007A07AE /* LikesViewProtocol.swift in Sources */,
 				1937E8F52A1F8BF1007A07AE /* BrowseModelProtocol.swift in Sources */,
 				1937E8DC2A1F8B44007A07AE /* RootTabbarViewController.swift in Sources */,

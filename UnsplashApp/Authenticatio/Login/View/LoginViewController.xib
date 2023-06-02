@@ -28,17 +28,11 @@
                     <rect key="frame" x="49" y="340" width="295" height="18.666666666666686"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocorrectionType="no"/>
-                    <connections>
-                        <action selector="emailWasChanged:" destination="-1" eventType="editingDidEnd" id="kcp-F0-qDa"/>
-                    </connections>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AbD-rs-oNn" customClass="CustomTextField" customModule="UnsplashApp" customModuleProvider="target">
                     <rect key="frame" x="49" y="388.66666666666669" width="295" height="17"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                    <connections>
-                        <action selector="passwordWasChanged:" destination="-1" eventType="editingChanged" id="tmw-sg-v0Z"/>
-                    </connections>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7WC-F7-gML">
                     <rect key="frame" x="120.00000000000001" y="503.66666666666669" width="153.33333333333337" height="28.333333333333314"/>

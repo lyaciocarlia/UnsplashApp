@@ -42,28 +42,52 @@ class LoginViewController: UIViewController, LoginViewProtocol {
         coordinator.openForgotPasswordScreen()
     }
     
-    @IBAction func emailWasChanged(_ sender: Any) {
-        viewModel.validateEmail(emailTextField.text!)
-        updateButtonStatus()
-    }
-    
-    @IBAction func passwordWasChanged(_ sender: Any) {
-        viewModel.validatePassword(passwordTextField.text!)
-        errorMessage.isHidden = viewModel.isErrorMessageHiden.value
-        updateButtonStatus()
-    }
-    
     func authenticationSuccessful() {
         coordinator.finishAuthentication()
     }
     
     func showErrorCredentialsAlert() {
-        let alertController = UIAlertController(title: "Could not login", message: "Wrong email or password.", preferredStyle: .alert)
+        let alertController = UIAlertController(title: Constants.couldNotLoginAlertTitle, message: Constants.couldNotLoginAlertMessage, preferredStyle: .alert)
         
-        let okAction = UIAlertAction(title: "OK", style: .default) { _ in }
+        let okAction = UIAlertAction(title: Constants.okButton, style: .default) { _ in }
         
         alertController.addAction(okAction)
         self.present(alertController, animated: true, completion: nil)
+    }
+}
+
+// MARK: - LIFE CYCLE
+
+extension LoginViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupUI()
+        setupBindings()
+        registerKeyboardNotifcations()
+        setupTextField(textField: emailTextField)
+        setupTextField(textField: passwordTextField)
+    }
+}
+
+// MARK: - UITEXT FIELD SETUP
+
+extension LoginViewController: UITextFieldDelegate {
+    
+    private func authenticate() {
+        passwordTextField.resignFirstResponder()
+        viewModel.login(email: emailTextField.text ?? "", password: passwordTextField.text ?? "" )
+    }
+    
+    func setupTextField(textField: UITextField) {
+        textField.delegate = self
+        textField.returnKeyType = .done
+        textField.textColor = .label
+        textField.autocorrectionType = .no
+        textField.becomeFirstResponder()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return true
     }
     
     private func updateButtonStatus() {
@@ -73,6 +97,30 @@ class LoginViewController: UIViewController, LoginViewProtocol {
     private func updatePasswordFieldColor () {
         let isValidPassword = viewModel.isValidPassword.value
         passwordTextField.textColor = !isValidPassword ? .systemRed : .black
+    }
+    
+    private func updateEmailFieldColor () {
+        let isValidCredentials = viewModel.isValidEmail.value
+        emailTextField.textColor = !isValidCredentials ? .systemRed : .black
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = textField.text ?? ""
+        let updatedText = (currentText as NSString).replacingCharacters(in: range, with: string)
+        
+        if textField == emailTextField {
+            viewModel.validateEmail(updatedText)
+            updateButtonStatus()
+            updateEmailFieldColor()
+        }
+        
+        if textField == passwordTextField {
+            viewModel.validatePassword(updatedText)
+            errorMessage.isHidden = viewModel.isErrorMessageHiden.value
+            updateButtonStatus()
+            updatePasswordFieldColor()
+        }
+        return true
     }
 }
 
@@ -93,20 +141,12 @@ extension LoginViewController {
         viewModel.isValidPassword.bind { [weak self] _ in
                 self?.updatePasswordFieldColor()
         }
+        viewModel.isValidEmail.bind {  [weak self] _ in
+            self?.updateEmailFieldColor()
+        }
     }
 }
 
-
-// MARK: - LIFE CYCLE
-
-extension LoginViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupUI()
-        setupBindings()
-        registerKeyboardNotifcations()
-    }
-}
 
 // MARK: - UI SETUP
 
@@ -114,7 +154,7 @@ extension LoginViewController {
     
     func setupUI() {
         navigationController?.navigationBar.isTranslucent = true
-        let image = UIImage(named: "hossein-nasr-oVWhUno9nSw-unsplash 2")
+        let image = UIImage(named: Constants.backgroundImageName )
         fadedImage.image = applyGradientToImage(image: image ?? UIImage())
         setupTextField(textField: emailTextField)
     }
@@ -130,7 +170,7 @@ extension LoginViewController {
         
         image.draw(at: .zero)
         
-        let colors = [UIColor(red: 255, green: 255, blue: 255, alpha: 0.5).cgColor, UIColor.white.cgColor]
+        let colors = Constants.gradientColors
         
         let locations: [CGFloat] = [0, 1]
         guard let gradient = CGGradient(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: colors as CFArray, locations: locations) else {
@@ -138,8 +178,8 @@ extension LoginViewController {
             return nil
         }
         
-        let startPoint = CGPoint(x: imageSize.width / 2, y: 0.0)
-        let endPoint = CGPoint(x: imageSize.width / 2, y: imageSize.height)
+        let startPoint = CGPoint(x: imageSize.width / Constants.devideByTwo, y: Constants.gradientY)
+        let endPoint = CGPoint(x: imageSize.width / Constants.devideByTwo, y: imageSize.height)
         context.drawLinearGradient(gradient, start: startPoint, end: endPoint, options: [])
         
         let gradientImage = UIGraphicsGetImageFromCurrentImageContext()
@@ -171,40 +211,17 @@ extension LoginViewController {
     @objc private func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             let keyboardHeight = keyboardSize.height
-            bottomConstraint.constant = keyboardHeight + 10
-            UIView.animate(withDuration: 0.3) {
+            bottomConstraint.constant = keyboardHeight + Constants.bottomConstraintIncrease
+            UIView.animate(withDuration: Constants.keyboardAnimationDuration) {
                 self.view.layoutIfNeeded()
             }
         }
     }
     
     @objc private func keyaboardWillHide() {
-        bottomConstraint.constant = 231
-        UIView.animate(withDuration: 0.3) {
+        bottomConstraint.constant = Constants.bottomConstraint
+        UIView.animate(withDuration: Constants.keyboardAnimationDuration) {
             self.view.layoutIfNeeded()
         }
     }
-    
 }
-
-// MARK: - UITEXT FIELD SETUP
-
-extension LoginViewController: UITextFieldDelegate {
-    
-    private func authenticate() {
-        passwordTextField.resignFirstResponder()
-        viewModel.login(email: emailTextField.text ?? "", password: passwordTextField.text ?? "" )
-    }
-    
-    func setupTextField(textField: UITextField) {
-        textField.returnKeyType = .done
-        textField.textColor = .label
-        textField.autocorrectionType = .no
-        textField.becomeFirstResponder()
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        return true
-    }
-}
-

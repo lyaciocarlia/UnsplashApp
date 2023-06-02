@@ -18,4 +18,8 @@ class AppService: AppServiceProtocol {
         let status = authenticationService.createAcc(user: user)
         return status
     }
+    
+    func checkForAcc() -> Bool {
+        return authenticationService.checkForAcc()
+    }
 }

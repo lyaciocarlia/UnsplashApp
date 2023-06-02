@@ -12,7 +12,7 @@ class CreateAccountViewController: UIViewController, CreateAccountViewProtocol {
     var viewModel: AuthenticationViewModel
     var coordinator: AuthenticationCoordinatorProtocol
     
-    @IBOutlet weak var emailTextFeild: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet weak var repeatPasswordUnderlineVIew: UIView!
@@ -31,39 +31,80 @@ class CreateAccountViewController: UIViewController, CreateAccountViewProtocol {
     }
     
     @IBAction func confirm(_ sender: Any) {
-        viewModel.createAcc(email: emailTextFeild.text ?? "", password: passwordTextField.text ?? "")
+        viewModel.createAcc(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
     }
     
-    @IBAction func emailFiledChanged(_ sender: Any) {
-        viewModel.validateEmail(emailTextFeild.text ?? "")
-    }
-    
-    @IBAction func passwordFieldChanged(_ sender: Any) {
-        viewModel.validatePassword(passwordTextField.text ?? "")
-    }
-    
-    @IBAction func repeatedPasswordFieldChanged(_ sender: Any) {
-        viewModel.comparePasswords(target: passwordTextField.text ?? "", with: confirmPasswordTextField.text ?? "")
+    func allowAccountCreation() {
         errorMessageLabel.isHidden = viewModel.isPasswordEquals.value
-        createAccountButton.isEnabled = viewModel.isPasswordEquals.value
+        createAccountButton.isEnabled = viewModel.isPasswordEquals.value && viewModel.isValidEmail.value && viewModel.isValidPassword.value
         repeatPasswordUnderlineVIew.backgroundColor = !viewModel.isPasswordEquals.value ? .systemRed : .black
     }
     
     func authenticationSuccessful() {
         coordinator.finishAuthentication()
     }
+}
+
+//MARK: - TEXTFIELD SETUP
+
+extension CreateAccountViewController: UITextFieldDelegate {
+    func setupTextField(textField: UITextField) {
+        textField.delegate = self
+        textField.returnKeyType = .done
+        textField.textColor = .label
+        textField.autocapitalizationType = .none
+        textField.autocorrectionType = .no
+        textField.becomeFirstResponder()
+    }
     
-    private func updateFieldColor () {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        confirmPasswordTextField.resignFirstResponder()
+        viewModel.createAcc(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
+        return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = textField.text ?? ""
+        let updatedText = (currentText as NSString).replacingCharacters(in: range, with: string)
+        
+        if textField == emailTextField {
+            viewModel.validateEmail(updatedText)
+            allowAccountCreation()
+            updateEmailFieldColor()
+        }
+        if textField == passwordTextField {
+            viewModel.validatePassword(updatedText)
+            allowAccountCreation()
+            updatePassFieldColor()
+        }
+        if textField == confirmPasswordTextField {
+            viewModel.comparePasswords(target: passwordTextField.text ?? "", with: updatedText)
+            allowAccountCreation()
+            updateConfirmPassFieldColor()
+        }
+        return true
+    }
+    
+    private func updateConfirmPassFieldColor () {
         let isValidCredentials = viewModel.isPasswordEquals.value
         confirmPasswordTextField.textColor = !isValidCredentials ? .systemRed : .black
     }
+    
+    private func updateEmailFieldColor () {
+        let isValidCredentials = viewModel.isValidEmail.value
+        emailTextField.textColor = !isValidCredentials ? .systemRed : .black
+    }
+    
+    private func updatePassFieldColor () {
+        let isValidCredentials = viewModel.isValidPassword.value
+        passwordTextField.textColor = !isValidCredentials ? .systemRed : .black
+    }
 }
 
-//MARK: - LIFE CYCLE
+//MARK: - BIND
+
 extension CreateAccountViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        registerKeyboardNotifcations()
+    private func bind() {
         viewModel.isAuthenticated.bind { [weak self] isAuthenticated in
             if isAuthenticated {
                 self?.authenticationSuccessful()
@@ -77,8 +118,26 @@ extension CreateAccountViewController {
             }
         }
         viewModel.isPasswordEquals.bind { [weak self] _ in
-            self?.updateFieldColor()
+            self?.updateConfirmPassFieldColor()
         }
+        viewModel.isValidEmail.bind { [weak self] _ in
+            self?.updateEmailFieldColor()
+        }
+        viewModel.isValidPassword.bind { [weak self] _ in
+            self?.updatePassFieldColor()
+        }
+    }
+}
+
+//MARK: - LIFE CYCLE
+extension CreateAccountViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        registerKeyboardNotifcations()
+        bind()
+        setupTextField(textField: emailTextField)
+        setupTextField(textField: passwordTextField)
+        setupTextField(textField: confirmPasswordTextField)
     }
 }
 
@@ -104,16 +163,16 @@ extension CreateAccountViewController {
     @objc private func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             let keyboardHeight = keyboardSize.height
-            botButtonConstraint.constant = keyboardHeight + 10
-            UIView.animate(withDuration: 0.3) {
+            botButtonConstraint.constant = keyboardHeight + Constants.bottomConstraintIncrease
+            UIView.animate(withDuration: Constants.keyboardAnimationDuration) {
                    self.view.layoutIfNeeded()
                }
         }
     }
     
     @objc private func keyaboardWillHide() {
-        botButtonConstraint.constant = 206
-        UIView.animate(withDuration: 0.3) {
+        botButtonConstraint.constant = Constants.bottomConstraintCreateAcc
+        UIView.animate(withDuration: Constants.keyboardAnimationDuration) {
                self.view.layoutIfNeeded()
            }
     }
@@ -128,11 +187,11 @@ extension CreateAccountViewController {
         var title: String
         switch status {
         case KeychainManager.KeychainError.duplicateEntry.localizedDescription:
-            alertMessage = "An account with this email already exists."
-            title = "Account already exists"
+            alertMessage = Constants.accountAlreadyExistsAlertMessage
+            title = Constants.accountAlreadyExistsAlertTitle
         case KeychainManager.KeychainError.unknown(OSStatus()).localizedDescription :
-            alertMessage = "An unknown error occurred when creating the account."
-            title = "Unknown error"
+            alertMessage = Constants.unknownErrorAlertMessage
+            title = Constants.unknownErrorAlertTitle
         default:
             alertMessage = ""
             title = ""
@@ -140,7 +199,7 @@ extension CreateAccountViewController {
     
         let alertController = UIAlertController(title: title, message: alertMessage, preferredStyle: .alert)
         
-        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+        let okAction = UIAlertAction(title: Constants.okButton, style: .default) { _ in
         }
         
         alertController.addAction(okAction)

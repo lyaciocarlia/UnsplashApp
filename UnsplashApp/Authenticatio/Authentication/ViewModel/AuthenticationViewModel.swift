@@ -19,6 +19,10 @@ class AuthenticationViewModel: AuthenticationViewModelProtocol {
     var createAccError: Observable<String?> = Observable(" ")
     let service: AppServiceProtocol = AppService()
     
+    func checkForAuth() {
+        isAuthenticated.value = service.checkForAcc()
+    }
+    
     func login(email: String, password: String) {
         if service.login(email: email, password: password)
         {
@@ -40,13 +44,13 @@ class AuthenticationViewModel: AuthenticationViewModelProtocol {
     }
     
     func validateEmail(_ email: String) {
-        let emailRegex = "@gmail.com"
-        self.isValidEmail.value =  email.hasSuffix(emailRegex)
+        let emailRegex = Constants.emailRegex
+        self.isValidEmail.value = email.hasSuffix(emailRegex)
     }
     
     func validatePassword(_ password: String) {
-        self.isValidPassword.value = password.count > 4
-        self.isErrorMessageHiden.value = password.count > 4
+        self.isValidPassword.value = password.count > Constants.minimPasswordSize
+        self.isErrorMessageHiden.value = password.count > Constants.minimPasswordSize 
     }
     
     func comparePasswords(target password: String, with secondPassword: String) {

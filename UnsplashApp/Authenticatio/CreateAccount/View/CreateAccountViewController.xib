@@ -13,7 +13,7 @@
                 <outlet property="botButtonConstraint" destination="Kaw-d7-dmr" id="bxO-6j-PgE"/>
                 <outlet property="confirmPasswordTextField" destination="G2Z-pu-IQw" id="XB4-Rv-a8Y"/>
                 <outlet property="createAccountButton" destination="t2Y-zt-kUp" id="R3M-Kf-yRT"/>
-                <outlet property="emailTextFeild" destination="FLy-0T-AGb" id="biF-ZD-kV0"/>
+                <outlet property="emailTextField" destination="FLy-0T-AGb" id="biF-ZD-kV0"/>
                 <outlet property="errorMessageLabel" destination="gid-Ug-ZKm" id="aEt-RU-ygd"/>
                 <outlet property="passwordTextField" destination="O9h-Ev-bKx" id="LNi-dJ-y7Y"/>
                 <outlet property="repeatPasswordUnderlineVIew" destination="gwQ-J0-sTi" id="aol-be-wzH"/>
@@ -31,16 +31,13 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your email" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FLy-0T-AGb" userLabel="EmailTextLabel">
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FLy-0T-AGb" userLabel="EmailTextLabel">
                     <rect key="frame" x="38" y="353.33333333333331" width="117" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="clv-gs-fPU"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits"/>
-                    <connections>
-                        <action selector="emailFiledChanged:" destination="-1" eventType="editingDidEnd" id="hAq-Vm-utT"/>
-                    </connections>
                 </textField>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gDn-tE-ny0" userLabel="emailUnderline">
                     <rect key="frame" x="38" y="393.33333333333331" width="314.33333333333331" height="1"/>
@@ -49,16 +46,13 @@
                         <constraint firstAttribute="height" constant="1" id="PQ9-xO-z7p"/>
                     </constraints>
                 </view>
-                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your password" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O9h-Ev-bKx" userLabel="passwordTextLabel">
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O9h-Ev-bKx" userLabel="passwordTextLabel">
                     <rect key="frame" x="38" y="423.33333333333331" width="148.33333333333334" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="Era-hw-CdQ"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                    <connections>
-                        <action selector="passwordFieldChanged:" destination="-1" eventType="editingDidEnd" id="Tfj-8Z-jEN"/>
-                    </connections>
                 </textField>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r1V-Cm-IdR" userLabel="passwordUnderline">
                     <rect key="frame" x="38" y="463.33333333333331" width="314.33333333333331" height="1"/>
@@ -67,16 +61,13 @@
                         <constraint firstAttribute="height" constant="1" id="sTW-QH-Vkc"/>
                     </constraints>
                 </view>
-                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Repeat your password" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G2Z-pu-IQw" userLabel="repaetPasswordTextLabel">
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Repeat your password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G2Z-pu-IQw" userLabel="repaetPasswordTextLabel">
                     <rect key="frame" x="38" y="493.33333333333331" width="161.33333333333334" height="29.999999999999943"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="7Wb-KF-hPZ"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                    <connections>
-                        <action selector="repeatedPasswordFieldChanged:" destination="-1" eventType="editingChanged" id="5ad-8k-c11"/>
-                    </connections>
                 </textField>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gwQ-J0-sTi" userLabel="repaetPasswordUnderline">
                     <rect key="frame" x="38" y="533.33333333333337" width="330" height="1"/>
