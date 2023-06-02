@@ -66,12 +66,6 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hossein-nasr-oVWhUno9nSw-unsplash 2" translatesAutoresizingMaskIntoConstraints="NO" id="cJ8-U2-SuX">
-                    <rect key="frame" x="0.0" y="3.6666666666666572" width="393" height="270"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="270" id="n9T-0K-rUb"/>
-                    </constraints>
-                </imageView>
                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password is too short" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqR-nM-9cS">
                     <rect key="frame" x="49.000000000000007" y="408" width="121.66666666666669" height="14.333333333333314"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -92,6 +86,12 @@
                         <action selector="buttonWasTapped:" destination="-1" eventType="touchUpInside" id="RX5-T2-pjx"/>
                     </connections>
                 </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hossein-nasr-oVWhUno9nSw-unsplash 2" translatesAutoresizingMaskIntoConstraints="NO" id="cJ8-U2-SuX">
+                    <rect key="frame" x="0.0" y="-130" width="393" height="400"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="400" id="n9T-0K-rUb"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -107,9 +107,9 @@
                 <constraint firstItem="804-9y-XJR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="49" id="XXm-Yp-hfd"/>
                 <constraint firstItem="Fad-hA-bOL" firstAttribute="top" secondItem="7WC-F7-gML" secondAttribute="bottom" constant="20" id="ZBL-QO-Lk1"/>
                 <constraint firstItem="W9B-x6-rLa" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.8" id="aKa-td-Jx1"/>
-                <constraint firstItem="EL6-qd-Dvr" firstAttribute="top" secondItem="cJ8-U2-SuX" secondAttribute="bottom" constant="-2" id="ckT-gT-9HP"/>
+                <constraint firstItem="EL6-qd-Dvr" firstAttribute="top" secondItem="cJ8-U2-SuX" secondAttribute="bottom" constant="1.6666666666666856" id="ckT-gT-9HP"/>
                 <constraint firstItem="7WC-F7-gML" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="evJ-bh-68G"/>
-                <constraint firstItem="cJ8-U2-SuX" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="hMh-Xf-i9E"/>
+                <constraint firstItem="cJ8-U2-SuX" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="hMh-Xf-i9E"/>
                 <constraint firstItem="Fad-hA-bOL" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="qcy-J0-LCG"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Fad-hA-bOL" secondAttribute="bottom" constant="231" id="t78-jM-EJU"/>
                 <constraint firstItem="AbD-rs-oNn" firstAttribute="top" secondItem="804-9y-XJR" secondAttribute="bottom" constant="30" id="whG-KZ-ZyJ"/>
