@@ -35,7 +35,7 @@ class KeychainManager {
         }
     }
     
-    static func getAcc() -> Bool {
+    static func getAccount() -> Bool {
         let query: [String: Any] = [
                 kSecClass as String: kSecClassInternetPassword,
                 kSecAttrServer as String: Constants.serviceName,

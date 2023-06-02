@@ -19,20 +19,19 @@ class AuthenticationViewModel: AuthenticationViewModelProtocol {
     var createAccError: Observable<String?> = Observable(" ")
     let service: AppServiceProtocol = AppService()
     
-    func checkForAuth() {
-        isAuthenticated.value = service.checkForAcc()
+    func checkForAuthentication() {
+        isAuthenticated.value = service.checkForAccount()
     }
     
     func login(email: String, password: String) {
-        if service.login(email: email, password: password)
-        {
+        if service.login(email: email, password: password) {
             self.isAuthenticated.value = true
         } else {
             wrongPassOrEmail.value = true
         }
     }
     
-    func createAcc(email: String, password: String) {
+    func createAccount(email: String, password: String) {
         let user = User(email: email, password: password)
         let status = service.createAcc(user: user)
         

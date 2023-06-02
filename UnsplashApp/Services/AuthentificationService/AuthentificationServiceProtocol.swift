@@ -9,6 +9,6 @@ import Foundation
 
 protocol AuthenticationServiceProtocol {
     func login(email: String, password: String) -> Bool
-    func createAcc(user: User) -> Error?
-    func checkForAcc() -> Bool
+    func createAccount(user: User) -> Error?
+    func checkForAccount() -> Bool
 }

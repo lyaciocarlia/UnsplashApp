@@ -24,20 +24,20 @@ class BrowseCoordinator: BrowseCoordinatorProtocol {
     func setupBrowseVC() -> UINavigationController {
         let browseVC = BrowseBuilder().build(coordinator: self)
         browseNavController = UINavigationController.init(rootViewController: browseVC)
-        browseNavController.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: Constants.firstScreen)
+        browseNavController.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: Screens.firstScreen)
         return browseNavController
     }
     
     func setupLikesVC() -> LikesViewProtocol {
         let likesVC = LikesBuilder().build(coordinator: self)
-        likesVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: Constants.secondScreen)
+        likesVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: Screens.secondScreen)
         return likesVC
     }
     
     func setupSettingsVC() -> UINavigationController {
         let likesVC = SettingsBuilder().build(coordinator: self)
         settingsNavController = UINavigationController.init(rootViewController: likesVC)
-        settingsNavController.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks , tag: Constants.thirdScreen)
+        settingsNavController.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks , tag: Screens.thirdScreen)
         return settingsNavController
     }
     

@@ -15,12 +15,12 @@ class LoginViewController: UIViewController, LoginViewProtocol {
     private var isValidEmail = false
     private var isValidPass = false
     
-    @IBOutlet weak var fadedImage: UIImageView!
-    @IBOutlet weak var emailTextField: CustomTextField!
-    @IBOutlet weak var errorMessage: UILabel!
-    @IBOutlet weak var passwordTextField: CustomTextField!
-    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet private weak var fadedImage: UIImageView!
+    @IBOutlet private weak var emailTextField: CustomTextField!
+    @IBOutlet private weak var errorMessage: UILabel!
+    @IBOutlet private weak var passwordTextField: CustomTextField!
+    @IBOutlet private weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var loginButton: UIButton!
     
     init(viewModel: AuthenticationViewModel, coordinator: AuthenticationCoordinatorProtocol) {
         self.viewModel = viewModel
@@ -44,14 +44,16 @@ class LoginViewController: UIViewController, LoginViewProtocol {
         coordinator.openForgotPasswordScreen()
     }
     
-    func authenticationSuccessful() {
+    private func authenticationSuccessful() {
         coordinator.finishAuthentication()
     }
     
-    func showErrorCredentialsAlert() {
-        let alertController = UIAlertController(title: Constants.couldNotLoginAlertTitle, message: Constants.couldNotLoginAlertMessage, preferredStyle: .alert)
+    private func showErrorCredentialsAlert() {
+        let alertController = UIAlertController(title: AlertTitle.couldNotLoginAlertTitle,
+                                                message: AlertMessage.couldNotLoginAlertMessage,
+                                                preferredStyle: .alert)
         
-        let okAction = UIAlertAction(title: Constants.okButton, style: .default) { _ in }
+        let okAction = UIAlertAction(title: ButtonsTitle.okButton, style: .default) { _ in }
         
         alertController.addAction(okAction)
         self.present(alertController, animated: true, completion: nil)
@@ -80,7 +82,7 @@ extension LoginViewController: UITextFieldDelegate {
         viewModel.login(email: emailTextField.text ?? "", password: passwordTextField.text ?? "" )
     }
     
-    func setupTextField(textField: UITextField) {
+    private func setupTextField(textField: UITextField) {
         textField.delegate = self
         textField.returnKeyType = .done
         textField.textColor = .label
@@ -157,14 +159,14 @@ extension LoginViewController {
 
 extension LoginViewController {
     
-    func setupUI() {
+    private func setupUI() {
         navigationController?.navigationBar.isTranslucent = true
-        let image = UIImage(named: Constants.backgroundImageName )
+        let image = UIImage(named: Images.backgroundImageName )
         fadedImage.image = applyGradientToImage(image: image ?? UIImage())
         setupTextField(textField: emailTextField)
     }
     
-    func applyGradientToImage(image: UIImage) -> UIImage? {
+   private func applyGradientToImage(image: UIImage) -> UIImage? {
         
         let imageSize = fadedImage.frame.size
         UIGraphicsBeginImageContextWithOptions(imageSize, false, 0.0)

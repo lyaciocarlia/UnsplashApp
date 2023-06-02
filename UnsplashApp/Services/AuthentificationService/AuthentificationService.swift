@@ -9,8 +9,8 @@ import Foundation
 
 class AuthentitacionService: AuthenticationServiceProtocol {
     
-    func checkForAcc() -> Bool {
-        return KeychainManager.getAcc()
+    func checkForAccount() -> Bool {
+        return KeychainManager.getAccount()
     }
     
     func login(email: String, password: String) -> Bool {
@@ -20,7 +20,7 @@ class AuthentitacionService: AuthenticationServiceProtocol {
         } else { return false }
     }
     
-    func createAcc(user: User) -> Error? {
+    func createAccount(user: User) -> Error? {
         let status = saveAccount(user: user)
         return status
     }

@@ -12,13 +12,13 @@ class CreateAccountViewController: UIViewController, CreateAccountViewProtocol {
     var viewModel: AuthenticationViewModel
     var coordinator: AuthenticationCoordinatorProtocol
     
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var confirmPasswordTextField: UITextField!
-    @IBOutlet weak var repeatPasswordUnderlineVIew: UIView!
-    @IBOutlet weak var errorMessageLabel: UILabel!
-    @IBOutlet weak var createAccountButton: UIButton!
-    @IBOutlet weak var botButtonConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var emailTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var confirmPasswordTextField: UITextField!
+    @IBOutlet private weak var repeatPasswordUnderlineVIew: UIView!
+    @IBOutlet private weak var errorMessageLabel: UILabel!
+    @IBOutlet private weak var createAccountButton: UIButton!
+    @IBOutlet private weak var botButtonConstraint: NSLayoutConstraint!
     
     private var arePassEqual = false
     private var isValidEmail = false
@@ -35,16 +35,16 @@ class CreateAccountViewController: UIViewController, CreateAccountViewProtocol {
     }
     
     @IBAction func confirm(_ sender: Any) {
-        viewModel.createAcc(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
+        viewModel.createAccount(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
     }
     
-    func allowAccountCreation() {
+    private func allowAccountCreation() {
         errorMessageLabel.isHidden = arePassEqual
         createAccountButton.isEnabled = arePassEqual && isValidPass && isValidEmail
         repeatPasswordUnderlineVIew.backgroundColor = arePassEqual ? .systemRed : .black
     }
     
-    func authenticationSuccessful() {
+    private func authenticationSuccessful() {
         coordinator.finishAuthentication()
     }
 }
@@ -52,7 +52,7 @@ class CreateAccountViewController: UIViewController, CreateAccountViewProtocol {
 //MARK: - TEXTFIELD SETUP
 
 extension CreateAccountViewController: UITextFieldDelegate {
-    func setupTextField(textField: UITextField) {
+    private func setupTextField(textField: UITextField) {
         textField.delegate = self
         textField.returnKeyType = .done
         textField.textColor = .label
@@ -63,7 +63,7 @@ extension CreateAccountViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         confirmPasswordTextField.resignFirstResponder()
-        viewModel.createAcc(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
+        viewModel.createAccount(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
         return true
     }
     
@@ -189,16 +189,16 @@ extension CreateAccountViewController {
 //MARK: - SHOW ALERT
 
 extension CreateAccountViewController {
-    func showAlert(status: String ) {
+    private func showAlert(status: String ) {
         var alertMessage: String
         var title: String
         switch status {
         case KeychainManager.KeychainError.duplicateEntry.localizedDescription:
-            alertMessage = Constants.accountAlreadyExistsAlertMessage
-            title = Constants.accountAlreadyExistsAlertTitle
+            alertMessage = AlertMessage.accountAlreadyExistsAlertMessage
+            title = AlertTitle.accountAlreadyExistsAlertTitle
         case KeychainManager.KeychainError.unknown(OSStatus()).localizedDescription :
-            alertMessage = Constants.unknownErrorAlertMessage
-            title = Constants.unknownErrorAlertTitle
+            alertMessage = AlertMessage.unknownErrorAlertMessage
+            title = AlertTitle.unknownErrorAlertTitle
         default:
             alertMessage = ""
             title = ""
@@ -206,7 +206,7 @@ extension CreateAccountViewController {
     
         let alertController = UIAlertController(title: title, message: alertMessage, preferredStyle: .alert)
         
-        let okAction = UIAlertAction(title: Constants.okButton, style: .default) { _ in
+        let okAction = UIAlertAction(title: ButtonsTitle.okButton, style: .default) { _ in
         }
         
         alertController.addAction(okAction)

@@ -13,11 +13,11 @@ class ForgotPasswordViewController: UIViewController, ForgotPasswordViewProtocol
     
     var viewModel: AuthenticationViewModelProtocol
     var coordinator: AuthenticationCoordinatorProtocol
-    @IBOutlet weak var botButtonConstraint: NSLayoutConstraint!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var errorMessageLabel: UILabel!
-    @IBOutlet weak var emailUnderlineView: UIView!
-    @IBOutlet weak var confirmButton: UIButton!
+    @IBOutlet private weak var botButtonConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var emailTextField: UITextField!
+    @IBOutlet private weak var errorMessageLabel: UILabel!
+    @IBOutlet private weak var emailUnderlineView: UIView!
+    @IBOutlet private weak var confirmButton: UIButton!
     
     init(viewModel: AuthenticationViewModelProtocol, coordinator: AuthenticationCoordinatorProtocol) {
         self.viewModel = viewModel
@@ -40,21 +40,21 @@ class ForgotPasswordViewController: UIViewController, ForgotPasswordViewProtocol
         showPass()
     }
     
-    func showPass() {
+    private func showPass() {
         guard let email = emailTextField.text else { return }
-        var title = Constants.showPassErrorAlertTitle
-        var message = Constants.showPassErrorAlertMessage
+        var title = AlertTitle.showPassErrorAlertTitle
+        var message = AlertMessage.showPassErrorAlertMessage
         if let passwordData = KeychainManager.getPassword(for: email) {
             let password = String(decoding: passwordData, as: UTF8.self)
-            title = Constants.showPassAlertTitle
-            message = "\(Constants.showPassAlertMessage) \(password)"
+            title = AlertTitle.showPassAlertTitle
+            message = "\(AlertMessage.showPassAlertMessage) \(password)"
         }
         
         let alertWithPasword = UIAlertController(title: title,
                                                  message: message,
                                                  preferredStyle: .alert)
         
-        let okAction = UIAlertAction(title: Constants.okButton, style: .default) { _ in
+        let okAction = UIAlertAction(title: ButtonsTitle.okButton, style: .default) { _ in
             self.coordinator.goBackToLoginScreen()
         }
         alertWithPasword.addAction(okAction)

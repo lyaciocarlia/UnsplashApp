@@ -37,7 +37,7 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
                 self?.authenticationSuccessful()
             }
         }
-        viewModel.checkForAuth()
+        viewModel.checkForAuthentication()
     }
     
     func authenticationSuccessful() {

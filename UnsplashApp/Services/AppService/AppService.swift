@@ -15,11 +15,11 @@ class AppService: AppServiceProtocol {
     }
     
     func createAcc(user: User) -> Error? {
-        let status = authenticationService.createAcc(user: user)
+        let status = authenticationService.createAccount(user: user)
         return status
     }
     
-    func checkForAcc() -> Bool {
-        return authenticationService.checkForAcc()
+    func checkForAccount() -> Bool {
+        return authenticationService.checkForAccount()
     }
 }

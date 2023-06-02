@@ -13,6 +13,6 @@ protocol AuthenticationViewModelProtocol {
     func login(email: String, password: String)
     func validateEmail(_ email: String)
     func validatePassword(_ password: String)
-    func checkForAuth()
+    func checkForAuthentication()
     func comparePasswords(target password: String, with secondPassword: String)
 }
