@@ -12,6 +12,9 @@ class LoginViewController: UIViewController, LoginViewProtocol {
     var viewModel: AuthenticationViewModel
     var coordinator: AuthenticationCoordinatorProtocol
     
+    private var isValidEmail = false
+    private var isValidPass = false
+    
     @IBOutlet weak var fadedImage: UIImageView!
     @IBOutlet weak var emailTextField: CustomTextField!
     @IBOutlet weak var errorMessage: UILabel!
@@ -24,7 +27,6 @@ class LoginViewController: UIViewController, LoginViewProtocol {
         self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
     }
-    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -87,20 +89,21 @@ extension LoginViewController: UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        authenticate()
         return true
     }
     
     private func updateButtonStatus() {
-        loginButton.isEnabled = viewModel.isValidEmail.value && viewModel.isValidPassword.value
+        loginButton.isEnabled = isValidPass && isValidEmail
     }
     
     private func updatePasswordFieldColor () {
-        let isValidPassword = viewModel.isValidPassword.value
+        let isValidPassword = isValidPass
         passwordTextField.textColor = !isValidPassword ? .systemRed : .black
     }
     
     private func updateEmailFieldColor () {
-        let isValidCredentials = viewModel.isValidEmail.value
+        let isValidCredentials = isValidEmail
         emailTextField.textColor = !isValidCredentials ? .systemRed : .black
     }
     
@@ -138,10 +141,12 @@ extension LoginViewController {
                 self?.showErrorCredentialsAlert()
             }
         }
-        viewModel.isValidPassword.bind { [weak self] _ in
-                self?.updatePasswordFieldColor()
+        viewModel.isValidPassword.bind { [weak self] value in
+            self?.isValidPass = value
+            self?.updatePasswordFieldColor()
         }
-        viewModel.isValidEmail.bind {  [weak self] _ in
+        viewModel.isValidEmail.bind {  [weak self] value in
+            self?.isValidEmail = value
             self?.updateEmailFieldColor()
         }
     }

@@ -20,6 +20,10 @@ class CreateAccountViewController: UIViewController, CreateAccountViewProtocol {
     @IBOutlet weak var createAccountButton: UIButton!
     @IBOutlet weak var botButtonConstraint: NSLayoutConstraint!
     
+    private var arePassEqual = false
+    private var isValidEmail = false
+    private var isValidPass = false
+    
     init(viewModel: AuthenticationViewModel, coordinator: AuthenticationCoordinatorProtocol) {
         self.viewModel = viewModel
         self.coordinator = coordinator
@@ -35,9 +39,9 @@ class CreateAccountViewController: UIViewController, CreateAccountViewProtocol {
     }
     
     func allowAccountCreation() {
-        errorMessageLabel.isHidden = viewModel.isPasswordEquals.value
-        createAccountButton.isEnabled = viewModel.isPasswordEquals.value && viewModel.isValidEmail.value && viewModel.isValidPassword.value
-        repeatPasswordUnderlineVIew.backgroundColor = !viewModel.isPasswordEquals.value ? .systemRed : .black
+        errorMessageLabel.isHidden = arePassEqual
+        createAccountButton.isEnabled = arePassEqual && isValidPass && isValidEmail
+        repeatPasswordUnderlineVIew.backgroundColor = arePassEqual ? .systemRed : .black
     }
     
     func authenticationSuccessful() {
@@ -86,17 +90,17 @@ extension CreateAccountViewController: UITextFieldDelegate {
     }
     
     private func updateConfirmPassFieldColor () {
-        let isValidCredentials = viewModel.isPasswordEquals.value
+        let isValidCredentials = arePassEqual
         confirmPasswordTextField.textColor = !isValidCredentials ? .systemRed : .black
     }
     
     private func updateEmailFieldColor () {
-        let isValidCredentials = viewModel.isValidEmail.value
+        let isValidCredentials = isValidPass
         emailTextField.textColor = !isValidCredentials ? .systemRed : .black
     }
     
     private func updatePassFieldColor () {
-        let isValidCredentials = viewModel.isValidPassword.value
+        let isValidCredentials = isValidPass
         passwordTextField.textColor = !isValidCredentials ? .systemRed : .black
     }
 }
@@ -117,13 +121,16 @@ extension CreateAccountViewController {
             default: self?.showAlert(status: createAccError!)
             }
         }
-        viewModel.isPasswordEquals.bind { [weak self] _ in
+        viewModel.isPasswordEquals.bind { [weak self] value in
+            self?.arePassEqual = value
             self?.updateConfirmPassFieldColor()
         }
-        viewModel.isValidEmail.bind { [weak self] _ in
+        viewModel.isValidEmail.bind { [weak self] value in
+            self?.isValidEmail = value
             self?.updateEmailFieldColor()
         }
-        viewModel.isValidPassword.bind { [weak self] _ in
+        viewModel.isValidPassword.bind { [weak self] value in
+            self?.isValidPass = value
             self?.updatePassFieldColor()
         }
     }

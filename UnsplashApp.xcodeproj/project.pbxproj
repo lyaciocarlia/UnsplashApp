@@ -224,7 +224,7 @@
 				194993AA2A29E9C2009FFAAF /* Constants.swift */,
 				1937E8372A1F3D45007A07AE /* AppDelegate.swift */,
 				1937E84B2A1F3DD7007A07AE /* MainCoordinator.swift */,
-				1937E84D2A1F3DE6007A07AE /* Authenticatio */,
+				1937E84D2A1F3DE6007A07AE /* Authentication */,
 				1937E8702A1F4116007A07AE /* Browse */,
 				1937E8942A1F42DD007A07AE /* Services */,
 				1937E8992A1F4326007A07AE /* SupportingFiles */,
@@ -233,7 +233,7 @@
 			path = UnsplashApp;
 			sourceTree = "<group>";
 		};
-		1937E84D2A1F3DE6007A07AE /* Authenticatio */ = {
+		1937E84D2A1F3DE6007A07AE /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
 				1937E84E2A1F3E0F007A07AE /* AuthenticationCoordinator.swift */,
@@ -243,7 +243,7 @@
 				1937E85E2A1F3F5F007A07AE /* CreateAccount */,
 				1937E86B2A1F4057007A07AE /* ForgotPassword */,
 			);
-			path = Authenticatio;
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		1937E8522A1F3E33007A07AE /* Authentication */ = {
