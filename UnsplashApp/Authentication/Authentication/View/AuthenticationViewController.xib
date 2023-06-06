@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -32,7 +32,7 @@
                         <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
                     </buttonConfiguration>
                     <connections>
-                        <action selector="createAcc:" destination="-1" eventType="touchUpInside" id="gF2-Z9-mQB"/>
+                        <action selector="createAcc:" destination="-1" eventType="touchUpInside" id="ca4-nU-MXx"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Id-io-smU">
@@ -49,7 +49,7 @@
                         <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
                     </buttonConfiguration>
                     <connections>
-                        <action selector="login:" destination="-1" eventType="touchUpInside" id="42A-9x-G7I"/>
+                        <action selector="login:" destination="-1" eventType="touchUpInside" id="kLq-2d-8Z2"/>
                     </connections>
                 </button>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="hossein-nasr-oVWhUno9nSw-unsplash 2" translatesAutoresizingMaskIntoConstraints="NO" id="1j5-FH-fAp">
