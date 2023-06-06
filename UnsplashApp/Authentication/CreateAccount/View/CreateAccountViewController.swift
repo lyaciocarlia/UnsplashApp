@@ -41,7 +41,6 @@ class CreateAccountViewController: UIViewController, CreateAccountViewProtocol {
     private func allowAccountCreation() {
         errorMessageLabel.isHidden = arePassEqual
         createAccountButton.isEnabled = arePassEqual && isValidPass && isValidEmail
-        repeatPasswordUnderlineVIew.backgroundColor = arePassEqual ? .systemRed : .black
     }
     
     private func authenticationSuccessful() {
@@ -73,29 +72,24 @@ extension CreateAccountViewController: UITextFieldDelegate {
         
         if textField == emailTextField {
             viewModel.validateEmail(updatedText)
-            allowAccountCreation()
-            updateEmailFieldColor()
         }
         if textField == passwordTextField {
             viewModel.validatePassword(updatedText)
-            allowAccountCreation()
-            updatePassFieldColor()
         }
         if textField == confirmPasswordTextField {
             viewModel.comparePasswords(target: passwordTextField.text ?? "", with: updatedText)
-            allowAccountCreation()
-            updateConfirmPassFieldColor()
         }
         return true
     }
     
     private func updateConfirmPassFieldColor () {
         let isValidCredentials = arePassEqual
+        repeatPasswordUnderlineVIew.backgroundColor = !isValidCredentials ? .systemRed : .black
         confirmPasswordTextField.textColor = !isValidCredentials ? .systemRed : .black
     }
     
     private func updateEmailFieldColor () {
-        let isValidCredentials = isValidPass
+        let isValidCredentials = isValidEmail
         emailTextField.textColor = !isValidCredentials ? .systemRed : .black
     }
     
@@ -115,23 +109,22 @@ extension CreateAccountViewController {
             }
         }
         viewModel.createAccError.bind { [weak self] createAccError in
-            switch createAccError {
-            case nil: self?.authenticationSuccessful()
-            case " ": break
-            default: self?.showAlert(status: createAccError!)
-            }
+            self?.showAlert(status: createAccError)
         }
         viewModel.isPasswordEquals.bind { [weak self] value in
             self?.arePassEqual = value
             self?.updateConfirmPassFieldColor()
+            self?.allowAccountCreation()
         }
         viewModel.isValidEmail.bind { [weak self] value in
             self?.isValidEmail = value
             self?.updateEmailFieldColor()
+            self?.allowAccountCreation()
         }
         viewModel.isValidPassword.bind { [weak self] value in
             self?.isValidPass = value
             self?.updatePassFieldColor()
+            self?.allowAccountCreation()
         }
     }
 }
@@ -183,33 +176,23 @@ extension CreateAccountViewController {
                self.view.layoutIfNeeded()
            }
     }
-
 }
 
 //MARK: - SHOW ALERT
 
 extension CreateAccountViewController {
-    private func showAlert(status: String ) {
-        var alertMessage: String
-        var title: String
-        switch status {
-        case KeychainManager.KeychainError.duplicateEntry.localizedDescription:
-            alertMessage = AlertMessage.accountAlreadyExistsAlertMessage
-            title = AlertTitle.accountAlreadyExistsAlertTitle
-        case KeychainManager.KeychainError.unknown(OSStatus()).localizedDescription :
-            alertMessage = AlertMessage.unknownErrorAlertMessage
-            title = AlertTitle.unknownErrorAlertTitle
-        default:
-            alertMessage = ""
-            title = ""
-        }
-    
-        let alertController = UIAlertController(title: title, message: alertMessage, preferredStyle: .alert)
+    private func showAlert(status: (String?, String?) ) {
+        guard let alertMessage = status.0 else { return }
+        guard let title = status.0 else { return }
         
-        let okAction = UIAlertAction(title: ButtonsTitle.okButton, style: .default) { _ in
+        if alertMessage != " " && title != " " {
+            let alertController = UIAlertController(title: title, message: alertMessage, preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: ButtonsTitle.okButton, style: .default) { _ in
+            }
+            
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
         }
-        
-        alertController.addAction(okAction)
-        self.present(alertController, animated: true, completion: nil)
     }
 }

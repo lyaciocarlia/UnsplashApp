@@ -16,7 +16,7 @@ class AuthenticationViewModel: AuthenticationViewModelProtocol {
     var isValidPassword: Observable<Bool> = Observable(false)
     var isErrorMessageHiden: Observable<Bool> = Observable(true)
     var isPasswordEquals: Observable<Bool> = Observable(false)
-    var createAccError: Observable<String?> = Observable(" ")
+    var createAccError: Observable<(String?, String?)> = Observable((" ", " "))
     let service: AppServiceProtocol = AppService()
     
     func checkForAuthentication() {
@@ -35,10 +35,16 @@ class AuthenticationViewModel: AuthenticationViewModelProtocol {
         let user = User(email: email, password: password)
         let status = service.createAcc(user: user)
         
-        if status == nil {
-            self.isAuthenticated.value = true
-        } else {
-            self.createAccError.value = status!.localizedDescription
+        switch status?.localizedDescription {
+        case nil:  self.isAuthenticated.value = true
+        case KeychainManager.KeychainError.duplicateEntry.localizedDescription :
+            self.createAccError.value = (AlertMessage.accountAlreadyExistsAlertMessage,
+                                         AlertTitle.accountAlreadyExistsAlertTitle)
+        case KeychainManager.KeychainError.unknown(OSStatus()).localizedDescription:
+            self.createAccError.value = (AlertMessage.unknownErrorAlertMessage,
+                                         AlertTitle.unknownErrorAlertTitle)
+        default:
+            self.createAccError.value = ("","")
         }
     }
     

@@ -29,8 +29,6 @@ class KeychainManager {
             throw KeychainError.duplicateEntry
         }
         guard status == errSecSuccess else {
-            print(status)
-
             throw KeychainError.unknown (status)
         }
     }
