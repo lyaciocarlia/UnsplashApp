@@ -24,5 +24,6 @@ class MainCoordinator: NSObject, UINavigationControllerDelegate {
     func goToBrowseScreen() {
         let vc = BrowseCoordinator()
         navigationController.setViewControllers([vc.openBrowseModule()], animated: true)
+        navigationController.navigationBar.isHidden = true 
     }
 }

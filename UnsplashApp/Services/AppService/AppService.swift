@@ -9,6 +9,7 @@ import Foundation
 
 class AppService: AppServiceProtocol {
     let authenticationService: AuthenticationServiceProtocol = AuthentitacionService()
+    let apiService:APIServiceProtocol = APIService()
     
     func login(email: String, password: String) -> Bool {
         return authenticationService.login(email: email, password: password )
@@ -17,6 +18,12 @@ class AppService: AppServiceProtocol {
     func createAcc(user: User) -> Error? {
         let status = authenticationService.createAccount(user: user)
         return status
+    }
+    
+    func request(term: String, page: Int, complention: @escaping ([UnsplashPhoto]) -> Void) {
+        apiService.request(term: term, page: page) { fetchedPhotos in
+            complention(fetchedPhotos)
+        }
     }
     
     func checkForAccount() -> Bool {

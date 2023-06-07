@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+protocol APIServiceProtocol {
+    func request(term: String, page: Int, completion: @escaping ([UnsplashPhoto]) -> Void )
+    func getThePhotos() -> [UnsplashPhoto]
+}

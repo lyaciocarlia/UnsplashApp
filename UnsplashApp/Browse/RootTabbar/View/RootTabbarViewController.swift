@@ -46,6 +46,7 @@ class RootTabbarViewController: UITabBarController, RootTabbarProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         UITabBar.appearance().tintColor = .black
+        browse.navigationBar.isHidden = true
         self.viewControllers = [browse, likes, settings]
     }
     
