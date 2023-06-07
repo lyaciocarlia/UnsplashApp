@@ -24,26 +24,26 @@ class BrowseCoordinator: BrowseCoordinatorProtocol {
     func setupBrowseVC() -> UINavigationController {
         let browseVC = BrowseBuilder().build(coordinator: self)
         browseNavController = UINavigationController.init(rootViewController: browseVC)
-        let browseImage = UIImage(systemName: "magnifyingglass")
-        browseNavController.tabBarItem = UITabBarItem(title: "Browse", image: browseImage, tag: Screens.firstScreen)
-        browseNavController.tabBarItem.selectedImage = UIImage(systemName: "magnifyingglass.circle.fill")
+        let browseImage = UIImage(systemName: Images.magnifyingglass)
+        browseNavController.tabBarItem = UITabBarItem(title: ButtonsTitle.browseButton, image: browseImage, tag: Screens.firstScreen)
+        browseNavController.tabBarItem.selectedImage = UIImage(systemName: Images.magnifyingglassFill)
         return browseNavController
     }
     
     func setupLikesVC() -> LikesViewProtocol {
         let likesVC = LikesBuilder().build(coordinator: self)
-        let favoritesImage = UIImage(systemName: "heart")
-        likesVC.tabBarItem = UITabBarItem(title: "Likes", image: favoritesImage, tag: Screens.firstScreen)
-        likesVC.tabBarItem.selectedImage = UIImage(systemName: "heart.fill")
+        let favoritesImage = UIImage(systemName: Images.heart)
+        likesVC.tabBarItem = UITabBarItem(title: ButtonsTitle.likesButton, image: favoritesImage, tag: Screens.firstScreen)
+        likesVC.tabBarItem.selectedImage = UIImage(systemName: Images.heartFill)
         return likesVC
     }
     
     func setupSettingsVC() -> UINavigationController {
         let likesVC = SettingsBuilder().build(coordinator: self)
         settingsNavController = UINavigationController.init(rootViewController: likesVC)
-        let settingsImage = UIImage(systemName: "gearshape")
-        settingsNavController.tabBarItem = UITabBarItem(title: "Settings", image: settingsImage, tag: Screens.thirdScreen)
-        settingsNavController.tabBarItem.selectedImage = UIImage(systemName: "gearshape.fill")
+        let settingsImage = UIImage(systemName: Images.gearshape )
+        settingsNavController.tabBarItem = UITabBarItem(title: ButtonsTitle.settingsButton, image: settingsImage, tag: Screens.thirdScreen)
+        settingsNavController.tabBarItem.selectedImage = UIImage(systemName: Images.gearshapeFill)
         return settingsNavController
     }
     

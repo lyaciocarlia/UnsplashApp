@@ -16,7 +16,7 @@ class BrowseViewController: UIViewController, BrowseViewProtocol {
     lazy var layout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.itemSize = CGSize(width: self.view.frame.size.width - 32, height: 426)
+        layout.itemSize = CGSize(width: Int(self.view.frame.size.width) - CellConstants.singleWidth, height: CellConstants.singleHeigth)
         return layout
     }()
     
@@ -54,15 +54,15 @@ extension BrowseViewController {
 
 extension BrowseViewController {
     @IBAction func setDoubleFlow() {
-        layout.itemSize = CGSize(width: (self.view.frame.size.width - 48)/2, height: 226)
-        doubleImageFlowButton.setImage(UIImage(systemName: "square.grid.2x2.fill"), for: .normal)
-        singleImageFlowButton.setImage(UIImage(systemName: "square"), for: .normal)
+        layout.itemSize = CGSize(width: (Int(self.view.frame.size.width) - CellConstants.doubleWidth)/Int(Constants.devideByTwo), height: CellConstants.doubleHeigth)
+        doubleImageFlowButton.setImage(UIImage(systemName: Images.squareFill), for: .normal)
+        singleImageFlowButton.setImage(UIImage(systemName: Images.square), for: .normal)
     }
     
     @IBAction func setSigleFlow() {
-        layout.itemSize = CGSize(width: self.view.frame.size.width - 32, height: 426)
-        singleImageFlowButton.setImage(UIImage(systemName: "square.fill"), for: .normal)
-        doubleImageFlowButton.setImage(UIImage(systemName: "square.grid.2x2"), for: .normal)
+        layout.itemSize = CGSize(width: Int(self.view.frame.size.width) - CellConstants.singleWidth, height: CellConstants.singleHeigth)
+        singleImageFlowButton.setImage(UIImage(systemName: Images.squareFill), for: .normal)
+        doubleImageFlowButton.setImage(UIImage(systemName: Images.grid), for: .normal)
     }
 }
 

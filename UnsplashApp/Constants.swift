@@ -23,10 +23,23 @@ struct Constants {
 
 struct Images {
     static let backgroundImageName = "hossein-nasr-oVWhUno9nSw-unsplash 2"
+    static let magnifyingglass = "magnifyingglass"
+    static let magnifyingglassFill = "magnifyingglass.circle.fill"
+    static let heart = "heart"
+    static let heartFill = "heart.fill"
+    static let gearshape = "gearshape"
+    static let gearshapeFill = "gearshape.fill"
+    static let square = "square"
+    static let squareFill = "square.fill"
+    static let gridFill = "square.grid.2x2.fill"
+    static let grid = "square.grid.2x2"
 }
 
 struct ButtonsTitle {
     static let okButton = "OK"
+    static let settingsButton = "Settings"
+    static let likesButton = "Likes"
+    static let browseButton = "Browse"
 }
 
 struct AlertMessage {
@@ -49,4 +62,15 @@ struct Screens {
     static let firstScreen = 0
     static let secondScreen = 1
     static let thirdScreen = 2
+}
+
+struct CellConstants {
+    static let singleWidth = 32
+    static let singleHeigth = 426
+    static let doubleWidth = 48
+    static let doubleHeigth = 226
+}
+
+struct api {
+    static let nrOfPages = 10
 }
