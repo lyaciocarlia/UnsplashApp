@@ -9,10 +9,8 @@ import Foundation
 
 class ChangePasswordBuilder {
     func build(coordinator: BrowseCoordinator) -> ChangePasswordViewProtocol {
-            let view = ChangePasswordViewController()
-            let viewModel = ChangePasswordViewModel()
-            view.coordinator = coordinator
-            view.viewModel = viewModel
+        let viewModel = ChangePasswordViewModel()
+        let view = ChangePasswordViewController(viewModel: viewModel, coordinator: coordinator)
             return view
     }
 }

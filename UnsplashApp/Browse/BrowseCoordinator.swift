@@ -25,14 +25,16 @@ class BrowseCoordinator: BrowseCoordinatorProtocol {
         let browseVC = BrowseBuilder().build(coordinator: self)
         browseNavController = UINavigationController.init(rootViewController: browseVC)
         let browseImage = UIImage(systemName: "magnifyingglass")
-        browseNavController.tabBarItem = UITabBarItem(title: "Browse", image: browseImage, tag: 0)
+        browseNavController.tabBarItem = UITabBarItem(title: "Browse", image: browseImage, tag: Screens.firstScreen)
+        browseNavController.tabBarItem.selectedImage = UIImage(systemName: "magnifyingglass.circle.fill")
         return browseNavController
     }
     
     func setupLikesVC() -> LikesViewProtocol {
         let likesVC = LikesBuilder().build(coordinator: self)
         let favoritesImage = UIImage(systemName: "heart")
-        likesVC.tabBarItem = UITabBarItem(title: "Likes", image: favoritesImage, tag: 1)
+        likesVC.tabBarItem = UITabBarItem(title: "Likes", image: favoritesImage, tag: Screens.firstScreen)
+        likesVC.tabBarItem.selectedImage = UIImage(systemName: "heart.fill")
         return likesVC
     }
     
@@ -40,7 +42,8 @@ class BrowseCoordinator: BrowseCoordinatorProtocol {
         let likesVC = SettingsBuilder().build(coordinator: self)
         settingsNavController = UINavigationController.init(rootViewController: likesVC)
         let settingsImage = UIImage(systemName: "gearshape")
-        settingsNavController.tabBarItem = UITabBarItem(title: "Settings", image: settingsImage, tag: 2)
+        settingsNavController.tabBarItem = UITabBarItem(title: "Settings", image: settingsImage, tag: Screens.thirdScreen)
+        settingsNavController.tabBarItem.selectedImage = UIImage(systemName: "gearshape.fill")
         return settingsNavController
     }
     

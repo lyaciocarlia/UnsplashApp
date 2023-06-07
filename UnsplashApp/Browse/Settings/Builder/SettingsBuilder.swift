@@ -9,10 +9,8 @@ import Foundation
 
 class SettingsBuilder {
     func build(coordinator: BrowseCoordinator) -> SettingsViewProtocol {
-            let view = SettingsViewController()
-            let viewModel = SettingsViewModel()
-            view.coordinator = coordinator
-            view.viewModel = viewModel
-            return view
+        let viewModel = SettingsViewModel()
+        let view = SettingsViewController(viewModel: viewModel, coordinator: coordinator)
+        return view
     }
 }

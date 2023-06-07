@@ -9,6 +9,6 @@ import Foundation
 import UIKit
 
 protocol SettingsViewProtocol: UIViewController {
-    var viewModel: SettingsViewModelProtocol? { get set }
-    var coordinator: BrowseCoordinatorProtocol? { get set }
+    var viewModel: SettingsViewModelProtocol { get set }
+    var coordinator: BrowseCoordinatorProtocol { get set }
 }

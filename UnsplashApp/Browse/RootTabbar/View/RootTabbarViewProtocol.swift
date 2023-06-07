@@ -9,6 +9,6 @@ import Foundation
 import UIKit
 
 protocol RootTabbarProtocol: UIViewController {
-    var viewModel: RootTabbarViewModelProtocol? { get set }
-    var coordinator: BrowseCoordinatorProtocol? { get set }
+    var viewModel: RootTabbarViewModelProtocol { get set }
+    var coordinator: BrowseCoordinatorProtocol { get set }
 }

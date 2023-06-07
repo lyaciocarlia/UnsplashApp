@@ -10,10 +10,8 @@ import Foundation
 class PictureDetailsBuilder {
     
     func build(coordinator: BrowseCoordinatorProtocol) -> PictureDetailsViewProtocol {
-        let view = PictureDetailsViewController()
         let viewModel = PictureDetailsViewModel()
-        view.coordinator = coordinator
-        view.viewModel = viewModel
+        let view = PictureDetailsViewController(viewModel: viewModel, coordinator: coordinator)
         return view
     }
 }
