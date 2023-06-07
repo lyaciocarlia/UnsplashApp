@@ -49,6 +49,7 @@ class BrowseCoordinator: BrowseCoordinatorProtocol {
     
     func openPictureDetails() {
         let detailVC = PictureDetailsBuilder().build(coordinator: self)
+        browseNavController.navigationBar.isHidden = false
         browseNavController.pushViewController(detailVC, animated: true)
     }
     
