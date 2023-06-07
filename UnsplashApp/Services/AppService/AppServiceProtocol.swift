@@ -12,5 +12,4 @@ protocol AppServiceProtocol {
     func createAcc(user: User) -> Error?
     func checkForAccount() -> Bool
     func request(term: String, page: Int, complention: @escaping ([UnsplashPhoto]) -> Void)
-    func getThePhotos() async -> [UnsplashPhoto]
 }
