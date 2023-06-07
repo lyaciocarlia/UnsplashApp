@@ -8,10 +8,9 @@
 import UIKit
 
 class RootTabbarViewController: UITabBarController, RootTabbarProtocol {
-
-    var viewModel: RootTabbarViewModelProtocol
-    var coordinator: BrowseCoordinatorProtocol
     
+    var viewModel: RootTabbarViewModelProtocol
+    var coordinator: BrowseCoordinatorProtocol    
     var browse: UINavigationController
     var likes: LikesViewProtocol
     var settings: UINavigationController
@@ -33,10 +32,21 @@ class RootTabbarViewController: UITabBarController, RootTabbarProtocol {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        let lineColor = UIColor.lightGray
+        let lineWidth: CGFloat = 0.5
+        let lineLayer = CALayer()
+        lineLayer.backgroundColor = lineColor.cgColor
+        lineLayer.frame = CGRect(x: 0, y: 0, width: tabBar.frame.width, height: lineWidth)
+        tabBar.layer.addSublayer(lineLayer)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         UITabBar.appearance().tintColor = .black
         self.viewControllers = [browse, likes, settings]
     }
-
+    
 }
