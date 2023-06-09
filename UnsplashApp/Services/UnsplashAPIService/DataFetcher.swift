@@ -58,7 +58,7 @@ class DataFetcher {
         var parameters = [String: String]()
         parameters["query"] = searchTerm
         parameters["page"] = String(page)
-        parameters["per_page"] = String(api.nrOfPages)
+        parameters["per_page"] = String(API.nrOfPages)
         return parameters
     }
     

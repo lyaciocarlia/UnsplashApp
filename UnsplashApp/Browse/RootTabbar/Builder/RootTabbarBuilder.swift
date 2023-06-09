@@ -12,7 +12,7 @@ class RootTabbarBuilder {
     
     func build(coordinator: BrowseCoordinator,
                browse: UINavigationController,
-               likes: LikesViewProtocol,
+               likes: UINavigationController,
                settings: UINavigationController) -> RootTabbarProtocol {
         
         let viewModel = RootTabbarViewModel()

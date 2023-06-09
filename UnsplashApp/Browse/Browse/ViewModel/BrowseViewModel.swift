@@ -26,8 +26,7 @@ class BrowseViewModel: BrowseViewModelProtocol {
     }
     
     func getThePhotosForStartApp() {
-        self.request(term: "Moldova")
-        
+        self.request(term: Constants.requestTerm)
     }
     
     func nrOfPhotos() -> Int {

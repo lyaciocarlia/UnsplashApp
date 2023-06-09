@@ -12,4 +12,10 @@ protocol AppServiceProtocol {
     func createAcc(user: User) -> Error?
     func checkForAccount() -> Bool
     func request(term: String, page: Int, complention: @escaping ([UnsplashPhoto]) -> Void)
+    func deletePhoto(with id: String)
+    func addPhoto(photo: CoreDataPhoto)
+    func getPhoto(at index: Int) -> CoreDataPhoto?
+    func numberOfPhotos() -> Int
+    func isLikedOrNot(with id: String) -> Bool
+    func convertPhotoToCoreDataPhoto() -> [CoreDataPhoto]?
 }

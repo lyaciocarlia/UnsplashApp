@@ -12,17 +12,15 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "Cell"
     
-    var unsplashPhoto: UnsplashPhoto! {
+    var unsplashPhoto: URL? {
         didSet {
-            let photoUrl = unsplashPhoto.urls["regular"]
-            guard let imageUrl = photoUrl, let url = URL(string: imageUrl) else { return }
-            photoImageView.sd_setImage(with: url,completed: nil)
+            photoImageView.sd_setImage(with: unsplashPhoto,completed: nil)
         }
     }
     
     private let photoImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.layer.cornerRadius = 10
+        imageView.layer.cornerRadius = Constants.cellCornerRadius
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleToFill

@@ -55,7 +55,7 @@ extension BrowseViewController {
 extension BrowseViewController {
     @IBAction func setDoubleFlow() {
         layout.itemSize = CGSize(width: (Int(self.view.frame.size.width) - CellConstants.doubleWidth)/Int(Constants.devideByTwo), height: CellConstants.doubleHeigth)
-        doubleImageFlowButton.setImage(UIImage(systemName: Images.squareFill), for: .normal)
+        doubleImageFlowButton.setImage(UIImage(systemName: Images.gridFill), for: .normal)
         singleImageFlowButton.setImage(UIImage(systemName: Images.square), for: .normal)
     }
     
@@ -83,7 +83,7 @@ extension BrowseViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        coordinator.openPictureDetails()
+        coordinator.openPictureDetails(unsplashPhoto: photos[indexPath.item])
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -94,7 +94,9 @@ extension BrowseViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = photoCollectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as! PhotoCollectionViewCell
         let unsplashPhoto = photos[indexPath.item]
-        cell.unsplashPhoto = unsplashPhoto
+        let photoUrl = unsplashPhoto.urls["regular"]
+        guard let imageUrl = photoUrl, let url = URL(string: imageUrl) else { return UICollectionViewCell() }
+        cell.unsplashPhoto = url
         return cell
     }
     

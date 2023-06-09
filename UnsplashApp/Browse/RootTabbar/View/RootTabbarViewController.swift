@@ -12,13 +12,13 @@ class RootTabbarViewController: UITabBarController, RootTabbarProtocol {
     var viewModel: RootTabbarViewModelProtocol
     var coordinator: BrowseCoordinatorProtocol    
     var browse: UINavigationController
-    var likes: LikesViewProtocol
+    var likes: UINavigationController
     var settings: UINavigationController
     
     init(viewModel: RootTabbarViewModelProtocol,
          coordinator: BrowseCoordinatorProtocol,
          browse: UINavigationController,
-         likes: LikesViewProtocol,
+         likes: UINavigationController,
          settings: UINavigationController) {
         self.viewModel = viewModel
         self.coordinator = coordinator

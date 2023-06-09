@@ -177,7 +177,7 @@ extension LoginViewController {
         
         image.draw(at: .zero)
         
-        let colors = Constants.gradientColors
+        let colors = GradientColors.whiteToClear
         
         let locations: [CGFloat] = [0, 1]
         guard let gradient = CGGradient(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: colors as CFArray, locations: locations) else {

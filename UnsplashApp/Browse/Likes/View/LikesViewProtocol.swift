@@ -9,6 +9,6 @@ import Foundation
 import UIKit
 
 protocol LikesViewProtocol: UIViewController {
-    var viewModel: LikesViewModelProtocol { get set }
+    var viewModel: PictureDetailsViewModelProtocol { get set }
     var coordinator: BrowseCoordinatorProtocol { get set }
 }
