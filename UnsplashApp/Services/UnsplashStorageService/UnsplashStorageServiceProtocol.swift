@@ -14,4 +14,5 @@ protocol StorageServiceProtocol {
     func numberOfPhotos() -> Int
     func isLikedOrNot(with id: String) -> Bool
     func convertPhotoToCoreDataPhoto() -> [CoreDataPhoto]?
+    func deleteAllPhotos()
 }

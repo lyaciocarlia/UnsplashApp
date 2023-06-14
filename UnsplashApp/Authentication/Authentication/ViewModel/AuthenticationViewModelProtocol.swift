@@ -14,5 +14,6 @@ protocol AuthenticationViewModelProtocol {
     func validateEmail(_ email: String)
     func validatePassword(_ password: String)
     func checkForAuthentication()
+    func logOut()
     func comparePasswords(target password: String, with secondPassword: String)
 }

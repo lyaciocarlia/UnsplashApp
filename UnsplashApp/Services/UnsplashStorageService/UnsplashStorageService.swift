@@ -103,4 +103,12 @@ class StorageService: StorageServiceProtocol {
             }
         }
     }
+    
+    func deleteAllPhotos() {
+        photos = getPhotosFromDB() ?? []
+        photos.forEach { photo in
+            context.delete(photo)
+            saveContext()
+        }
+    }
 }

@@ -16,6 +16,10 @@ class AppService: AppServiceProtocol {
     lazy var storageService = StorageService(managedObjectContext: coreDataStack.mainContext,
                                      coreDataStack: coreDataStack)
     
+    func deleteAllPhotos() {
+        storageService.deleteAllPhotos()
+    }
+    
     func deletePhoto(with id: String) {
         storageService.deletePhoto(with: id)
     }
@@ -57,5 +61,13 @@ class AppService: AppServiceProtocol {
     
     func checkForAccount() -> Bool {
         return authenticationService.checkForAccount()
+    }
+    
+    func updateAccountPassword(newPassword: String) -> Bool {
+        return authenticationService.updateAccountPassword(newPassword: newPassword)
+    }
+    
+    func logOut() -> Error? {
+        return authenticationService.louOut()
     }
 }

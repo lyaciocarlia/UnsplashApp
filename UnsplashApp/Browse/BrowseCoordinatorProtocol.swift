@@ -13,5 +13,6 @@ protocol BrowseCoordinatorProtocol {
     func openChangePasswordScreen()
     func openBrowseModule() -> UIViewController
     func goBackToBrowseScreen(controller: String)
-    func openPictureDetails(coreDataPhoto: CoreDataPhoto) 
+    func openPictureDetails(coreDataPhoto: CoreDataPhoto)
+    func goToAuthScreen()
 }

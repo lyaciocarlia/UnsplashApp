@@ -10,6 +10,7 @@ import UIKit
 
 class BrowseCoordinator: BrowseCoordinatorProtocol {
     
+    let navigationController = UINavigationController()
     var browseNavController = UINavigationController()
     var settingsNavController = UINavigationController()
     var likesNavController = UINavigationController()
@@ -83,5 +84,12 @@ class BrowseCoordinator: BrowseCoordinatorProtocol {
     func openChangePasswordScreen() {
         let changePasswordVC = ChangePasswordBuilder().build(coordinator: self)
         settingsNavController.pushViewController(changePasswordVC, animated: true)
+    }
+    
+    func goToAuthScreen() {
+        let mainCoordinator = MainCoordinator(navigationController: navigationController)
+        let targetVC = mainCoordinator.rootVC()
+        targetVC.modalPresentationStyle = .fullScreen
+        settingsNavController.show(targetVC, sender: self)
     }
 }

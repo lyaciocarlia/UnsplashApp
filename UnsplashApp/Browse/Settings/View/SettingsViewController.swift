@@ -26,7 +26,22 @@ class SettingsViewController: UIViewController, SettingsViewProtocol {
         coordinator.openChangePasswordScreen()
     }
    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBAction func deletePersistentData(_ sender: Any) {
+        let alertController = UIAlertController(title: title, message: AlertTitle.showDeleteDataConfrimation, preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: ButtonsTitle.okButton, style: .default) { _ in
+            self.viewModel.clearData()
+        }
+        
+        let cancelActoun = UIAlertAction(title: ButtonsTitle.cancelButton, style: .default) { _ in }
+        
+        alertController.addAction(okAction)
+        alertController.addAction(cancelActoun)
+        self.present(alertController, animated: true, completion: nil)
+    }
+
+    @IBAction func logOut(_ sender: Any) {
+        viewModel.logOut()
+        coordinator.goToAuthScreen()
     }
 }

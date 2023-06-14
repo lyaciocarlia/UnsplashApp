@@ -35,7 +35,7 @@ class CreateAccountViewController: UIViewController, CreateAccountViewProtocol {
     }
     
     @IBAction func confirm(_ sender: Any) {
-        viewModel.createAccount(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
+         viewModel.createAccount(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
     }
     
     private func allowAccountCreation() {

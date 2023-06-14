@@ -45,4 +45,5 @@ class AuthenticationCoordinator: AuthenticationCoordinatorProtocol {
         let mainCoordinator = MainCoordinator(navigationController: navigationController)
         mainCoordinator.goToBrowseScreen()
     }
+    
 }

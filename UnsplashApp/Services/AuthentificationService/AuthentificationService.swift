@@ -9,6 +9,8 @@ import Foundation
 
 class AuthentitacionService: AuthenticationServiceProtocol {
     
+    var currentUser: User?
+    
     func checkForAccount() -> Bool {
         return KeychainManager.getAccount()
     }
@@ -24,7 +26,7 @@ class AuthentitacionService: AuthenticationServiceProtocol {
         let status = saveAccount(user: user)
         return status
     }
-
+    
     func saveAccount(user: User) -> Error? {
         do {
             try KeychainManager.saveAccount(user: user)
@@ -38,5 +40,18 @@ class AuthentitacionService: AuthenticationServiceProtocol {
     func getPassword(email: String) -> Data {
         guard let password = KeychainManager.getPassword(for: email) else { return Data() }
         return password
+    }
+    
+    func updateAccountPassword(newPassword: String) -> Bool {
+        return KeychainManager.updateUserPassword(newPassword: newPassword)
+    }
+    
+    func louOut() -> Error? {
+        do{
+            try KeychainManager.logOut()
+            return nil
+        } catch {
+            return error
+        }
     }
 }

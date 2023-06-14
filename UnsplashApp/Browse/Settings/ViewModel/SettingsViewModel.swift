@@ -8,5 +8,16 @@
 import Foundation
 
 class SettingsViewModel: SettingsViewModelProtocol {
+ 
+    let appService = AppService()
+    let authViewModel = AuthenticationViewModel()
     
+    func clearData() {
+        appService.deleteAllPhotos()
+    }
+    
+    func logOut() {
+        authViewModel.logOut()
+        appService.logOut()
+    }
 }

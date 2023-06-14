@@ -51,9 +51,12 @@ struct ButtonsTitle {
     static let settingsButton = "Settings"
     static let likesButton = "Likes"
     static let browseButton = "Browse"
+    static let cancelButton = "Cancel"
 }
 
 struct AlertMessage {
+    static let passwordWasChanged = "Password was changed"
+    static let passwordWasNotChanged = "Password was not changed"
     static let couldNotLoginAlertMessage = "Wrong email or password."
     static let showPassAlertMessage = "That's your passwod - "
     static let accountAlreadyExistsAlertMessage = "An account with this email already exists."
@@ -62,11 +65,13 @@ struct AlertMessage {
 }
 
 struct AlertTitle {
+    static let success = "Successfully!"
     static let couldNotLoginAlertTitle = "Could not login"
     static let accountAlreadyExistsAlertTitle = "Account already exists"
     static let showPassAlertTitle = "REMEMBER !"
     static let showPassErrorAlertTitle = "ERROR"
     static let unknownErrorAlertTitle = "Unknown error"
+    static let showDeleteDataConfrimation = "Delete all photos?"
 }
 
 struct Screens {

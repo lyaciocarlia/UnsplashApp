@@ -65,4 +65,8 @@ class AuthenticationViewModel: AuthenticationViewModelProtocol {
             self.isPasswordEquals.value = false
         }
     }
+    
+    func logOut() {
+        self.isAuthenticated.value = false
+    }
 }
