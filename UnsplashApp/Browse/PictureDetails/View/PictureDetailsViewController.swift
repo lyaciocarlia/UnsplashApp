@@ -71,6 +71,13 @@ class PictureDetailsViewController: UIViewController, PictureDetailsViewProtocol
     @IBAction func like(_ sender: Any) {
         likesButtonTapped()
     }
+    
+    private func bind() {
+        viewModel.isAdded.bind { [weak self] isAdded in
+            self?.isAdded = isAdded
+            isAdded ? self?.likesButton.setImage(UIImage(systemName: "heart.fill"), for: .normal) : self?.likesButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        }
+    }
 }
 
 // MARK: - LIFE CYCLE
@@ -80,10 +87,7 @@ extension PictureDetailsViewController {
         addTapGesture()
         checkIfIsLiked()
         imageView.sd_setImage(with: imageURL, completed: nil)
-        viewModel.isAdded.bind { [weak self] isAdded in
-            self?.isAdded = isAdded
-            isAdded ? self?.likesButton.setImage(UIImage(systemName: "heart.fill"), for: .normal) : self?.likesButton.setImage(UIImage(systemName: "heart"), for: .normal)
-        }
+        bind()
     }
     
     override func viewWillAppear(_ animated: Bool) {

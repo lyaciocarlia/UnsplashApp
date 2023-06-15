@@ -64,24 +64,10 @@ class StorageService: StorageServiceProtocol {
         return photos?[index]
     }
     
-//    func parseTaskList(section: Int) -> [Task] {
-//        if section == Constants.firstSection && nrOfActiveTasks() != 0 {
-//            return activeTasks
-//        } else {
-//            return completedTasks
-//        }
-//    }
-    
     private func saveContext() {
         coreDataStack.saveContext(context)
     }
-    
-//    private func getDBTaskIndex(task: Task) -> Int? {
-//        refreshTasks()
-//        guard let index = (tasks.firstIndex { $0.actionDate == task.actionDate }) else { return nil }
-//        return index
-//    }
-    
+   
     func addPhoto(photo: CoreDataPhoto) {
         let photoToAdd = Photo(context: context)
         photoToAdd.id = photo.id
