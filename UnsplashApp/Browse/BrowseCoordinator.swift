@@ -12,6 +12,7 @@ class BrowseCoordinator: BrowseCoordinatorProtocol {
     
     var browseNavController = UINavigationController()
     var settingsNavController = UINavigationController()
+    var likesNavController = UINavigationController()
     let rootTabbar = RootTabbarBuilder()
     
     func openBrowseModule() -> UIViewController {
@@ -30,12 +31,13 @@ class BrowseCoordinator: BrowseCoordinatorProtocol {
         return browseNavController
     }
     
-    func setupLikesVC() -> LikesViewProtocol {
+    func setupLikesVC() -> UINavigationController {
         let likesVC = LikesBuilder().build(coordinator: self)
+        likesNavController = UINavigationController(rootViewController: likesVC)
         let favoritesImage = UIImage(systemName: Images.heart)
-        likesVC.tabBarItem = UITabBarItem(title: ButtonsTitle.likesButton, image: favoritesImage, tag: Screens.firstScreen)
-        likesVC.tabBarItem.selectedImage = UIImage(systemName: Images.heartFill)
-        return likesVC
+        likesNavController.tabBarItem = UITabBarItem(title: ButtonsTitle.likesButton, image: favoritesImage, tag: Screens.firstScreen)
+        likesNavController.tabBarItem.selectedImage = UIImage(systemName: Images.heartFill)
+        return likesNavController
     }
     
     func setupSettingsVC() -> UINavigationController {
@@ -47,10 +49,35 @@ class BrowseCoordinator: BrowseCoordinatorProtocol {
         return settingsNavController
     }
     
-    func openPictureDetails() {
-        let detailVC = PictureDetailsBuilder().build(coordinator: self)
-        browseNavController.navigationBar.isHidden = false
+    func openPictureDetails(unsplashPhoto: UnsplashPhoto) {
+        let detailVC = PictureDetailsBuilder().build(coordinator: self, unsplashPhoto: unsplashPhoto)
+        browseNavController.navigationBar.isHidden = true
+        browseNavController.tabBarController?.tabBar.isHidden = true
         browseNavController.pushViewController(detailVC, animated: true)
+    }
+    
+    func openPictureDetails(coreDataPhoto: CoreDataPhoto) {
+        let detailVC = PictureDetailsBuilder().build(coordinator: self, coreDataPhoto: coreDataPhoto)
+        likesNavController.navigationBar.isHidden = true
+        likesNavController.tabBarController?.tabBar.isHidden = true
+        likesNavController.pushViewController(detailVC, animated: true)
+    }
+    
+    func goBackToBrowseScreen(controller: String) {
+        switch controller {
+        case Screen.browseScr:
+            browseNavController.tabBarController?.tabBar.isHidden = false
+            browseNavController.popViewController(animated: true)
+        case Screen.likesScr:
+            likesNavController.tabBarController?.tabBar.isHidden = false
+            likesNavController.popViewController(animated: true)
+        default:
+            print("Errror to go back")
+        }
+    }
+    
+    func goBack() {
+        likesNavController.popViewController(animated: true)
     }
     
     func openChangePasswordScreen() {

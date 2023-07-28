@@ -135,6 +135,8 @@ extension CreateAccountViewController {
         super.viewDidLoad()
         registerKeyboardNotifcations()
         bind()
+        errorMessageLabel.isHidden = true
+        repeatPasswordUnderlineVIew.backgroundColor = .black
         setupTextField(textField: emailTextField)
         setupTextField(textField: passwordTextField)
         setupTextField(textField: confirmPasswordTextField)

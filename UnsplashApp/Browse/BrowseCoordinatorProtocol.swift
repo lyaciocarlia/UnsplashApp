@@ -9,7 +9,9 @@ import Foundation
 import UIKit
 
 protocol BrowseCoordinatorProtocol {
-    func openPictureDetails()
+    func openPictureDetails(unsplashPhoto: UnsplashPhoto)
     func openChangePasswordScreen()
     func openBrowseModule() -> UIViewController
+    func goBackToBrowseScreen(controller: String)
+    func openPictureDetails(coreDataPhoto: CoreDataPhoto) 
 }

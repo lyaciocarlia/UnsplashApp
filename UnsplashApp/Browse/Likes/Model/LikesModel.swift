@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct CoreDataPhoto {
+    var imageURL: String
+    var id: String
+    var location: String?
+    var date: String
+    var license: String?
+}
