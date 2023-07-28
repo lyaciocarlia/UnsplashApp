@@ -1,6 +1,6 @@
 # Unsplash Mobile App - Readme
 
-![Unsplash Mobile App](app_screenshot.png)
+![Unsplash Mobile App](https://github.com/lyaciocarlia/UnsplashApp/blob/main/Screenshot%202023-07-28%20at%2018.12.21.png)
 
 ## Overview
 
