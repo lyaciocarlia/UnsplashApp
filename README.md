@@ -1,4 +1,4 @@
-# Unsplash Mobile App - Readme
+# Unsplash Mobile App
 
 ![Unsplash Mobile App](https://github.com/lyaciocarlia/UnsplashApp/blob/main/Screenshot%202023-07-28%20at%2018.12.21.png)
 
@@ -10,7 +10,7 @@ Welcome to the Unsplash Mobile App! This app is built to provide a seamless expe
 
 1. **Browsing Photos**: Explore an extensive collection of high-quality, royalty-free photos from Unsplash. Scroll through the curated feed and discover stunning visuals from talented photographers worldwide.
 
-2. **Photo Details**: Tap on a photo to view its details, including the photographer's name, photo resolution, number of likes, and user comments.
+2. **Photo Details**: Tap on a photo to view its details, including the photographer's name, city and date.
 
 3. **Saving to Core Data**: If you come across a photo that you wish to save for later, simply add it to your favorites. The app uses Core Data to store and manage your liked photos.
 
